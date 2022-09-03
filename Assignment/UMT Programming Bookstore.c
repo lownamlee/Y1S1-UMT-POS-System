@@ -2,6 +2,10 @@
 
 int main(void)
 {
-    printf("UMT Programming Bookstore\n");
+    printf("========================================\n");
+    printf("       UMT Programming Bookstore\n");
+    printf("========================================\n");
+    printf("A simple console POS system.\n");
+
     return 0;
 }
