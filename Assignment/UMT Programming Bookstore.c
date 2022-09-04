@@ -33,7 +33,10 @@ int main(void)
 
         if (menuOpt[0] == 1)
         {
-            printf("Software programming books will be listed later.\n");
+            printf("\nSoftware Development Programming\n");
+            printf("A. Introduction to Java Programming - RM69.00\n");
+            printf("B. Learn to Program with C (2015) - RM70.00\n");
+            printf("C. Java For Dummies - RM55.50\n");
         }
         else if (menuOpt[0] == 2)
         {
