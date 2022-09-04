@@ -31,6 +31,25 @@ int main(void)
         gets(menuOpt);
         menuOpt[0] -= 48;
 
+        while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
+        {
+            printf("Invalid menu category.\n");
+
+            for (int i = 0; i < MAX_INPUT; i++)
+            {
+                menuOpt[i] = 0;
+            }
+
+            printf("\nMenu Lists\n");
+            printf("1. Software Development Programming\n");
+            printf("2. Web Programming\n");
+            printf("3. Mobile Programming\n");
+            printf("Input: ");
+            rewind(stdin);
+            gets(menuOpt);
+            menuOpt[0] -= 48;
+        }
+
         if (menuOpt[0] == 1)
         {
             printf("\nSoftware Development Programming\n");
@@ -51,10 +70,6 @@ int main(void)
             printf("G. Mobile Design and Programming - RM73.50\n");
             printf("H. Start Building Mobile App - RM80.00\n");
             printf("I. Android Programming - RM50.00\n");
-        }
-        else
-        {
-            printf("Invalid menu category.\n");
         }
     }
     else if (option[0] == 2)
