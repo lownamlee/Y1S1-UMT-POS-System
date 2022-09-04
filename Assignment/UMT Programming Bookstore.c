@@ -40,7 +40,10 @@ int main(void)
         }
         else if (menuOpt[0] == 2)
         {
-            printf("Web programming books will be listed later.\n");
+            printf("\nWeb Programming\n");
+            printf("D. Introduction to Web Programming - RM58.00\n");
+            printf("E. Introduction HTML & CSS - RM65.00\n");
+            printf("F. Introduction to PHP - RM89.00\n");
         }
         else if (menuOpt[0] == 3)
         {
