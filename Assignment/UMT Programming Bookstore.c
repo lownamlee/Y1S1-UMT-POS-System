@@ -3,6 +3,7 @@
 
 void menu();
 void software();
+void web();
 
 int main(void)
 {
@@ -79,10 +80,7 @@ void menu()
         software();
         break;
     case 2:
-        printf("\nWeb Programming\n");
-        printf("D. Introduction to Web Programming - RM58.00\n");
-        printf("E. Introduction HTML & CSS - RM65.00\n");
-        printf("F. Introduction to PHP - RM89.00\n");
+        web();
         break;
     case 3:
         printf("\nMobile Programming\n");
@@ -98,4 +96,12 @@ void software()
     printf("A. Introduction to Java Programming - RM69.00\n");
     printf("B. Learn to Program with C (2015) - RM70.00\n");
     printf("C. Java For Dummies - RM55.50\n");
+}
+
+void web()
+{
+    printf("\nWeb Programming\n");
+    printf("D. Introduction to Web Programming - RM58.00\n");
+    printf("E. Introduction HTML & CSS - RM65.00\n");
+    printf("F. Introduction to PHP - RM89.00\n");
 }
