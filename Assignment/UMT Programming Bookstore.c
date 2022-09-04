@@ -47,7 +47,10 @@ int main(void)
         }
         else if (menuOpt[0] == 3)
         {
-            printf("Mobile programming books will be listed later.\n");
+            printf("\nMobile Programming\n");
+            printf("G. Mobile Design and Programming - RM73.50\n");
+            printf("H. Start Building Mobile App - RM80.00\n");
+            printf("I. Android Programming - RM50.00\n");
         }
         else
         {
