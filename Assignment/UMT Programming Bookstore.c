@@ -2,6 +2,7 @@
 #define MAX_INPUT 1000
 
 void menu();
+void software();
 
 int main(void)
 {
@@ -75,10 +76,7 @@ void menu()
     switch (menuOpt[0])
     {
     case 1:
-        printf("\nSoftware Development Programming\n");
-        printf("A. Introduction to Java Programming - RM69.00\n");
-        printf("B. Learn to Program with C (2015) - RM70.00\n");
-        printf("C. Java For Dummies - RM55.50\n");
+        software();
         break;
     case 2:
         printf("\nWeb Programming\n");
@@ -92,4 +90,12 @@ void menu()
         printf("H. Start Building Mobile App - RM80.00\n");
         printf("I. Android Programming - RM50.00\n");
     }
+}
+
+void software()
+{
+    printf("\nSoftware Development Programming\n");
+    printf("A. Introduction to Java Programming - RM69.00\n");
+    printf("B. Learn to Program with C (2015) - RM70.00\n");
+    printf("C. Java For Dummies - RM55.50\n");
 }
