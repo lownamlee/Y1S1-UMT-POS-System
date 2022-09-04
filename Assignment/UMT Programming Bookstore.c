@@ -4,6 +4,7 @@
 void menu();
 void software();
 void web();
+void mobile();
 
 int main(void)
 {
@@ -83,10 +84,7 @@ void menu()
         web();
         break;
     case 3:
-        printf("\nMobile Programming\n");
-        printf("G. Mobile Design and Programming - RM73.50\n");
-        printf("H. Start Building Mobile App - RM80.00\n");
-        printf("I. Android Programming - RM50.00\n");
+        mobile();
     }
 }
 
@@ -104,4 +102,12 @@ void web()
     printf("D. Introduction to Web Programming - RM58.00\n");
     printf("E. Introduction HTML & CSS - RM65.00\n");
     printf("F. Introduction to PHP - RM89.00\n");
+}
+
+void mobile()
+{
+    printf("\nMobile Programming\n");
+    printf("G. Mobile Design and Programming - RM73.50\n");
+    printf("H. Start Building Mobile App - RM80.00\n");
+    printf("I. Android Programming - RM50.00\n");
 }
