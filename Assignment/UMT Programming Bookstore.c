@@ -29,7 +29,8 @@ int main(void)
     }
     else if (option[0] == 2)
     {
-        printf("Sales order will be added later.\n");
+        printf("\nSales Order\n");
+        printf("Sales Order No: 1\n");
     }
     else if (option[0] == 3)
     {
