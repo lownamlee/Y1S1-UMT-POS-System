@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 #define MAX_INPUT 1000
 
 void menu();
@@ -64,6 +65,25 @@ int main(void)
             printf("Quantity: ");
             rewind(stdin);
             gets(qtyInput);
+
+            for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
+            {
+                while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
+                {
+                    printf("Invalid quantity.\n");
+
+                    for (int j = 0; j < MAX_INPUT; j++)
+                    {
+                        qtyInput[j] = 0;
+                    }
+
+                    printf("Quantity: ");
+                    rewind(stdin);
+                    gets(qtyInput);
+                    i = 0;
+                }
+            }
+
             printf("Book %c quantity: %s\n", index[0], qtyInput);
         }
     }
