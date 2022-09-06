@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 #define MAX_INPUT 1000
@@ -33,6 +34,7 @@ int main(void)
     {
         char index[MAX_INPUT] = { 0 };
         char qtyInput[MAX_INPUT] = { 0 };
+        int qty[9] = { 0 };
 
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
@@ -84,7 +86,10 @@ int main(void)
                 }
             }
 
-            printf("Book %c quantity: %s\n", index[0], qtyInput);
+            index[0] -= 65;
+            qty[index[0]] += atoi(qtyInput);
+
+            printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
         }
     }
     else if (option[0] == 3)
