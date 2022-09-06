@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #define MAX_INPUT 1000
 
 void menu();
@@ -36,6 +37,16 @@ int main(void)
         printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
         rewind(stdin);
         gets(index);
+        index[0] = toupper(index[0]);
+
+        if (index[0] == 'X')
+        {
+            printf("Order cancelled.\n");
+        }
+        else
+        {
+            printf("Selected Book %c\n", index[0]);
+        }
     }
     else if (option[0] == 3)
     {
