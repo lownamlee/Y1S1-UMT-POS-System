@@ -29,8 +29,13 @@ int main(void)
     }
     else if (option[0] == 2)
     {
+        char index[MAX_INPUT] = { 0 };
+
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
+        printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+        rewind(stdin);
+        gets(index);
     }
     else if (option[0] == 3)
     {
