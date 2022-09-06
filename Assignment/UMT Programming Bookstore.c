@@ -42,32 +42,39 @@ int main(void)
 
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
-        printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
-        rewind(stdin);
-        gets(index);
-        index[0] = toupper(index[0]);
-
-        while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
+        while (1)
         {
-            printf("Invalid book code.\n");
-
             for (int i = 0; i < MAX_INPUT; i++)
             {
                 index[i] = 0;
+                qtyInput[i] = 0;
             }
 
             printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
             rewind(stdin);
             gets(index);
             index[0] = toupper(index[0]);
-        }
 
-        if (index[0] == 'X')
-        {
-            printf("Order cancelled.\n");
-        }
-        else
-        {
+            while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
+            {
+                printf("Invalid book code.\n");
+
+                for (int i = 0; i < MAX_INPUT; i++)
+                {
+                    index[i] = 0;
+                }
+
+                printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+                rewind(stdin);
+                gets(index);
+                index[0] = toupper(index[0]);
+            }
+
+            if (index[0] == 'X')
+            {
+                break;
+            }
+
             printf("Quantity: ");
             rewind(stdin);
             gets(qtyInput);
@@ -92,13 +99,15 @@ int main(void)
 
             index[0] -= 65;
             qty[index[0]] += atoi(qtyInput);
-            priceBook[index[0]] = qty[index[0]] * BOOK_PRICE[index[0]];
+            priceBook[index[0]] = atoi(qtyInput) * BOOK_PRICE[index[0]];
             subtotal += priceBook[index[0]];
 
             printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
             printf("Item total: RM%.2lf\n", priceBook[index[0]]);
             printf("Subtotal: RM%.2lf\n", subtotal);
         }
+
+        printf("Order complete. Subtotal: RM%.2lf\n", subtotal);
     }
     else if (option[0] == 3)
     {
