@@ -39,6 +39,21 @@ int main(void)
         gets(index);
         index[0] = toupper(index[0]);
 
+        while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
+        {
+            printf("Invalid book code.\n");
+
+            for (int i = 0; i < MAX_INPUT; i++)
+            {
+                index[i] = 0;
+            }
+
+            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+            rewind(stdin);
+            gets(index);
+            index[0] = toupper(index[0]);
+        }
+
         if (index[0] == 'X')
         {
             printf("Order cancelled.\n");
