@@ -31,6 +31,7 @@ int main(void)
     else if (option[0] == 2)
     {
         char index[MAX_INPUT] = { 0 };
+        char qtyInput[MAX_INPUT] = { 0 };
 
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
@@ -60,7 +61,10 @@ int main(void)
         }
         else
         {
-            printf("Selected Book %c\n", index[0]);
+            printf("Quantity: ");
+            rewind(stdin);
+            gets(qtyInput);
+            printf("Book %c quantity: %s\n", index[0], qtyInput);
         }
     }
     else if (option[0] == 3)
