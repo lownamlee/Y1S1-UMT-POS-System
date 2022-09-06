@@ -4,6 +4,8 @@
 #include <string.h>
 #define MAX_INPUT 1000
 
+const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
+
 void menu();
 void software();
 void web();
@@ -35,6 +37,8 @@ int main(void)
         char index[MAX_INPUT] = { 0 };
         char qtyInput[MAX_INPUT] = { 0 };
         int qty[9] = { 0 };
+        double priceBook[9] = { 0 };
+        double subtotal = 0;
 
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
@@ -88,8 +92,12 @@ int main(void)
 
             index[0] -= 65;
             qty[index[0]] += atoi(qtyInput);
+            priceBook[index[0]] = qty[index[0]] * BOOK_PRICE[index[0]];
+            subtotal += priceBook[index[0]];
 
             printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
+            printf("Item total: RM%.2lf\n", priceBook[index[0]]);
+            printf("Subtotal: RM%.2lf\n", subtotal);
         }
     }
     else if (option[0] == 3)
