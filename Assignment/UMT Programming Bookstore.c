@@ -209,6 +209,15 @@ void salesOrder()
             choice[0] = toupper(choice[0]);
         }
     } while (choice[0] == 'Y');
+
+    printf("\nDaily Sales Order Summary Report\n");
+    printf("Total Number of Sales Orders = %d\n", sales);
+    printf("Book | Quantity Sold | Amount\n");
+
+    for (int i = 0; i < 9; i++)
+    {
+        printf("%c | %d | %.2lf\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
+    }
 }
 
 void menu()
