@@ -33,6 +33,21 @@ int main(void)
     gets(option);
     option[0] -= 48;
 
+    while (option[0] < 1 || option[0] > 3 || option[1] != 0)
+    {
+        printf("Invalid option.\n");
+
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            option[i] = 0;
+        }
+
+        printf("Choose an option: ");
+        rewind(stdin);
+        gets(option);
+        option[0] -= 48;
+    }
+
     if (option[0] == 1)
     {
         menu();
@@ -44,10 +59,6 @@ int main(void)
     else if (option[0] == 3)
     {
         printf("Exiting program.\n");
-    }
-    else
-    {
-        printf("Invalid option.\n");
     }
 
     return 0;
