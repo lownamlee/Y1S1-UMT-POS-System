@@ -36,6 +36,7 @@ int main(void)
     {
         char index[MAX_INPUT] = { 0 };
         char qtyInput[MAX_INPUT] = { 0 };
+        char ans[MAX_INPUT] = { 0 };
         int qty[9] = { 0 };
         double priceBook[9] = { 0 };
         double subtotal = 0;
@@ -72,7 +73,15 @@ int main(void)
 
             if (index[0] == 'X')
             {
-                break;
+                printf("Confirm the order? (Y = Yes, N = No): ");
+                rewind(stdin);
+                gets(ans);
+                ans[0] = toupper(ans[0]);
+
+                if (ans[0] == 'Y')
+                    break;
+                else
+                    continue;
             }
 
             printf("Quantity: ");
