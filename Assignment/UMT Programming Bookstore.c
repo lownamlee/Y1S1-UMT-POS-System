@@ -132,6 +132,19 @@ int main(void)
         }
 
         printf("Order complete. Subtotal: RM%.2lf\n", subtotal);
+        subtotal = 0;
+
+        printf("\nReceipt\n");
+        for (int i = 0; i < 9; i++)
+        {
+            priceBook[i] = qty[i] * BOOK_PRICE[i];
+            subtotal += priceBook[i];
+
+            if (priceBook[i] != 0)
+                printf("Book %c : %d @ RM%.2lf = RM%.2lf\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+        }
+
+        printf("Subtotal: RM%.2lf\n", subtotal);
     }
     else if (option[0] == 3)
     {
