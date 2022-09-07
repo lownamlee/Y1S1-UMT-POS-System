@@ -78,6 +78,21 @@ int main(void)
                 gets(ans);
                 ans[0] = toupper(ans[0]);
 
+                while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+                {
+                    printf("Invalid answer.\n");
+
+                    for (int i = 0; i < MAX_INPUT; i++)
+                    {
+                        ans[i] = 0;
+                    }
+
+                    printf("Confirm the order? (Y = Yes, N = No): ");
+                    rewind(stdin);
+                    gets(ans);
+                    ans[0] = toupper(ans[0]);
+                }
+
                 if (ans[0] == 'Y')
                     break;
                 else
