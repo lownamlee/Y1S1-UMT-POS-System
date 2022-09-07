@@ -13,6 +13,7 @@ void menu();
 void software();
 void web();
 void mobile();
+void salesOrder();
 
 int main(void)
 {
@@ -37,132 +38,7 @@ int main(void)
     }
     else if (option[0] == 2)
     {
-        char index[MAX_INPUT] = { 0 };
-        char qtyInput[MAX_INPUT] = { 0 };
-        char ans[MAX_INPUT] = { 0 };
-        int qty[9] = { 0 };
-        double priceBook[9] = { 0 };
-        double subtotal = 0;
-        double discount = 0;
-        double total = 0;
-
-        printf("\nSales Order\n");
-        printf("Sales Order No: 1\n");
-        while (1)
-        {
-            for (int i = 0; i < MAX_INPUT; i++)
-            {
-                index[i] = 0;
-                qtyInput[i] = 0;
-            }
-
-            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
-            rewind(stdin);
-            gets(index);
-            index[0] = toupper(index[0]);
-
-            while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
-            {
-                printf("Invalid book code.\n");
-
-                for (int i = 0; i < MAX_INPUT; i++)
-                {
-                    index[i] = 0;
-                }
-
-                printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
-                rewind(stdin);
-                gets(index);
-                index[0] = toupper(index[0]);
-            }
-
-            if (index[0] == 'X')
-            {
-                printf("Confirm the order? (Y = Yes, N = No): ");
-                rewind(stdin);
-                gets(ans);
-                ans[0] = toupper(ans[0]);
-
-                while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
-                {
-                    printf("Invalid answer.\n");
-
-                    for (int i = 0; i < MAX_INPUT; i++)
-                    {
-                        ans[i] = 0;
-                    }
-
-                    printf("Confirm the order? (Y = Yes, N = No): ");
-                    rewind(stdin);
-                    gets(ans);
-                    ans[0] = toupper(ans[0]);
-                }
-
-                if (ans[0] == 'Y')
-                    break;
-                else
-                    continue;
-            }
-
-            printf("Quantity: ");
-            rewind(stdin);
-            gets(qtyInput);
-
-            for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
-            {
-                while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
-                {
-                    printf("Invalid quantity.\n");
-
-                    for (int j = 0; j < MAX_INPUT; j++)
-                    {
-                        qtyInput[j] = 0;
-                    }
-
-                    printf("Quantity: ");
-                    rewind(stdin);
-                    gets(qtyInput);
-                    i = 0;
-                }
-            }
-
-            index[0] -= 65;
-            qty[index[0]] += atoi(qtyInput);
-            priceBook[index[0]] = atoi(qtyInput) * BOOK_PRICE[index[0]];
-            subtotal += priceBook[index[0]];
-
-            printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
-            printf("Item total: RM%.2lf\n", priceBook[index[0]]);
-            printf("Subtotal: RM%.2lf\n", subtotal);
-        }
-
-        printf("Order complete. Subtotal: RM%.2lf\n", subtotal);
-        subtotal = 0;
-
-        printf("\nReceipt\n");
-        for (int i = 0; i < 9; i++)
-        {
-            priceBook[i] = qty[i] * BOOK_PRICE[i];
-            subtotal += priceBook[i];
-
-            if (priceBook[i] != 0)
-                printf("Book %c : %d @ RM%.2lf = RM%.2lf\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
-        }
-
-        if (subtotal > 500)
-            discount = subtotal * DISCOUNT_RATE_500;
-        else if (subtotal > 300)
-            discount = subtotal * DISCOUNT_RATE_300;
-        else if (subtotal > 200)
-            discount = subtotal * DISCOUNT_RATE_200;
-        else
-            discount = 0.0;
-
-        total = subtotal - discount;
-
-        printf("Subtotal: RM%.2lf\n", subtotal);
-        printf("Discount: RM%.2lf\n", discount);
-        printf("Total to pay: RM%.2lf\n", total);
+        salesOrder();
     }
     else if (option[0] == 3)
     {
@@ -174,6 +50,136 @@ int main(void)
     }
 
     return 0;
+}
+
+void salesOrder()
+{
+    char index[MAX_INPUT] = { 0 };
+    char qtyInput[MAX_INPUT] = { 0 };
+    char ans[MAX_INPUT] = { 0 };
+    int qty[9] = { 0 };
+    double priceBook[9] = { 0 };
+    double subtotal = 0;
+    double discount = 0;
+    double total = 0;
+
+    printf("\nSales Order\n");
+    printf("Sales Order No: 1\n");
+    while (1)
+    {
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            index[i] = 0;
+            qtyInput[i] = 0;
+        }
+
+        printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+        rewind(stdin);
+        gets(index);
+        index[0] = toupper(index[0]);
+
+        while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
+        {
+            printf("Invalid book code.\n");
+
+            for (int i = 0; i < MAX_INPUT; i++)
+            {
+                index[i] = 0;
+            }
+
+            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+            rewind(stdin);
+            gets(index);
+            index[0] = toupper(index[0]);
+        }
+
+        if (index[0] == 'X')
+        {
+            printf("Confirm the order? (Y = Yes, N = No): ");
+            rewind(stdin);
+            gets(ans);
+            ans[0] = toupper(ans[0]);
+
+            while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+            {
+                printf("Invalid answer.\n");
+
+                for (int i = 0; i < MAX_INPUT; i++)
+                {
+                    ans[i] = 0;
+                }
+
+                printf("Confirm the order? (Y = Yes, N = No): ");
+                rewind(stdin);
+                gets(ans);
+                ans[0] = toupper(ans[0]);
+            }
+
+            if (ans[0] == 'Y')
+                break;
+            else
+                continue;
+        }
+
+        printf("Quantity: ");
+        rewind(stdin);
+        gets(qtyInput);
+
+        for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
+        {
+            while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
+            {
+                printf("Invalid quantity.\n");
+
+                for (int j = 0; j < MAX_INPUT; j++)
+                {
+                    qtyInput[j] = 0;
+                }
+
+                printf("Quantity: ");
+                rewind(stdin);
+                gets(qtyInput);
+                i = 0;
+            }
+        }
+
+        index[0] -= 65;
+        qty[index[0]] += atoi(qtyInput);
+        priceBook[index[0]] = atoi(qtyInput) * BOOK_PRICE[index[0]];
+        subtotal += priceBook[index[0]];
+
+        printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
+        printf("Item total: RM%.2lf\n", priceBook[index[0]]);
+        printf("Subtotal: RM%.2lf\n", subtotal);
+    }
+
+    printf("Order complete. Subtotal: RM%.2lf\n", subtotal);
+    subtotal = 0;
+
+    printf("\nReceipt\n");
+    for (int i = 0; i < 9; i++)
+    {
+        priceBook[i] = qty[i] * BOOK_PRICE[i];
+        subtotal += priceBook[i];
+
+        if (priceBook[i] != 0)
+            printf("Book %c : %d @ RM%.2lf = RM%.2lf\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+    }
+
+    if (subtotal > 500)
+        discount = subtotal * DISCOUNT_RATE_500;
+    else if (subtotal > 300)
+        discount = subtotal * DISCOUNT_RATE_300;
+    else if (subtotal > 200)
+        discount = subtotal * DISCOUNT_RATE_200;
+    else
+        discount = 0.0;
+
+    total = subtotal - discount;
+
+    printf("Subtotal: RM%.2lf\n", subtotal);
+    printf("Discount: RM%.2lf\n", discount);
+    printf("Total to pay: RM%.2lf\n", total);
 }
 
 void menu()
