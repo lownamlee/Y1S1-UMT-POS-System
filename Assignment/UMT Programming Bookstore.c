@@ -24,42 +24,51 @@ int main(void)
     printf("       UMT Programming Bookstore\n");
     printf("========================================\n");
     printf("A simple console POS system.\n");
-    printf("\n");
-    printf("1. View Menu\n");
-    printf("2. Sales Order\n");
-    printf("3. Exit\n");
-    printf("Choose an option: ");
-    rewind(stdin);
-    gets(option);
-    option[0] -= 48;
 
-    while (option[0] < 1 || option[0] > 3 || option[1] != 0)
+    do
     {
-        printf("Invalid option.\n");
-
         for (int i = 0; i < MAX_INPUT; i++)
         {
             option[i] = 0;
         }
 
+        printf("\n");
+        printf("1. View Menu\n");
+        printf("2. Sales Order\n");
+        printf("3. Exit\n");
         printf("Choose an option: ");
         rewind(stdin);
         gets(option);
         option[0] -= 48;
-    }
 
-    if (option[0] == 1)
-    {
-        menu();
-    }
-    else if (option[0] == 2)
-    {
-        salesOrder();
-    }
-    else if (option[0] == 3)
-    {
-        printf("Exiting program.\n");
-    }
+        while (option[0] < 1 || option[0] > 3 || option[1] != 0)
+        {
+            printf("Invalid option.\n");
+
+            for (int i = 0; i < MAX_INPUT; i++)
+            {
+                option[i] = 0;
+            }
+
+            printf("Choose an option: ");
+            rewind(stdin);
+            gets(option);
+            option[0] -= 48;
+        }
+
+        if (option[0] == 1)
+        {
+            menu();
+        }
+        else if (option[0] == 2)
+        {
+            salesOrder();
+        }
+        else if (option[0] == 3)
+        {
+            printf("Exiting program.\n");
+        }
+    } while (option[0] != 3);
 
     return 0;
 }
