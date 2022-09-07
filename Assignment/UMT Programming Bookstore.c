@@ -5,6 +5,9 @@
 #define MAX_INPUT 1000
 
 const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
+const double DISCOUNT_RATE_200 = 0.05;
+const double DISCOUNT_RATE_300 = 0.1;
+const double DISCOUNT_RATE_500 = 0.15;
 
 void menu();
 void software();
@@ -40,6 +43,8 @@ int main(void)
         int qty[9] = { 0 };
         double priceBook[9] = { 0 };
         double subtotal = 0;
+        double discount = 0;
+        double total = 0;
 
         printf("\nSales Order\n");
         printf("Sales Order No: 1\n");
@@ -144,7 +149,20 @@ int main(void)
                 printf("Book %c : %d @ RM%.2lf = RM%.2lf\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
         }
 
+        if (subtotal > 500)
+            discount = subtotal * DISCOUNT_RATE_500;
+        else if (subtotal > 300)
+            discount = subtotal * DISCOUNT_RATE_300;
+        else if (subtotal > 200)
+            discount = subtotal * DISCOUNT_RATE_200;
+        else
+            discount = 0.0;
+
+        total = subtotal - discount;
+
         printf("Subtotal: RM%.2lf\n", subtotal);
+        printf("Discount: RM%.2lf\n", discount);
+        printf("Total to pay: RM%.2lf\n", total);
     }
     else if (option[0] == 3)
     {
