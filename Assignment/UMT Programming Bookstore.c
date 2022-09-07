@@ -56,6 +56,7 @@ void salesOrder()
 {
     char choice[MAX_INPUT] = { 0 };
     int sales = 0;
+    int totalQty[9] = { 0 };
 
     do
     {
@@ -152,6 +153,7 @@ void salesOrder()
 
             index[0] -= 65;
             qty[index[0]] += atoi(qtyInput);
+            totalQty[index[0]] += atoi(qtyInput);
             priceBook[index[0]] = atoi(qtyInput) * BOOK_PRICE[index[0]];
             subtotal += priceBook[index[0]];
 
