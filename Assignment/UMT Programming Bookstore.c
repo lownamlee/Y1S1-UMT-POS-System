@@ -57,6 +57,7 @@ void salesOrder()
     char index[MAX_INPUT] = { 0 };
     char qtyInput[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
+    char choice[MAX_INPUT] = { 0 };
     int qty[9] = { 0 };
     double priceBook[9] = { 0 };
     double subtotal = 0;
@@ -180,6 +181,10 @@ void salesOrder()
     printf("Subtotal: RM%.2lf\n", subtotal);
     printf("Discount: RM%.2lf\n", discount);
     printf("Total to pay: RM%.2lf\n", total);
+    printf("Next order? (Y = Yes, N = No): ");
+    rewind(stdin);
+    gets(choice);
+    choice[0] = toupper(choice[0]);
 }
 
 void menu()
