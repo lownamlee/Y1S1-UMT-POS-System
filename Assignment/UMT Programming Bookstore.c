@@ -185,6 +185,21 @@ void salesOrder()
     rewind(stdin);
     gets(choice);
     choice[0] = toupper(choice[0]);
+
+    while (choice[0] != 'Y' && choice[0] != 'N' || choice[1] != 0)
+    {
+        printf("Invalid answer.\n");
+
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            choice[i] = 0;
+        }
+
+        printf("Next order? (Y = Yes, N = No): ");
+        rewind(stdin);
+        gets(choice);
+        choice[0] = toupper(choice[0]);
+    }
 }
 
 void menu()
