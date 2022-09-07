@@ -14,6 +14,7 @@ void software();
 void web();
 void mobile();
 void salesOrder();
+void report(int sales, int totalQty[]);
 
 int main(void)
 {
@@ -210,11 +211,17 @@ void salesOrder()
         }
     } while (choice[0] == 'Y');
 
+    report(sales, totalQty);
+}
+
+void report(int sales, int totalQty[])
+{
+    int totalBook = 0;
+    double totalPrice = 0;
+
     printf("\nDaily Sales Order Summary Report\n");
     printf("Total Number of Sales Orders = %d\n", sales);
     printf("Book | Quantity Sold | Amount\n");
-    int totalBook = 0;
-    double totalPrice = 0;
 
     for (int i = 0; i < 9; i++)
     {
