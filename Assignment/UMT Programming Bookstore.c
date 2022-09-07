@@ -213,11 +213,17 @@ void salesOrder()
     printf("\nDaily Sales Order Summary Report\n");
     printf("Total Number of Sales Orders = %d\n", sales);
     printf("Book | Quantity Sold | Amount\n");
+    int totalBook = 0;
+    double totalPrice = 0;
 
     for (int i = 0; i < 9; i++)
     {
+        totalBook += totalQty[i];
+        totalPrice += totalQty[i] * BOOK_PRICE[i];
         printf("%c | %d | %.2lf\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
     }
+
+    printf("TOTAL | %d | %.2lf\n", totalBook, totalPrice);
 }
 
 void menu()
