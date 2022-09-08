@@ -17,6 +17,7 @@ void salesOrder();
 void report(int sales, int totalQty[]);
 char quit();
 void error();
+void box(int line);
 
 int main(void)
 {
@@ -365,4 +366,12 @@ void mobile()
 void error()
 {
     printf("Invalid input, please try it again\n");
+}
+
+void box(int line)
+{
+    for (int i = 0; i < line; i++)
+    {
+        printf("----------------------------------------\n");
+    }
 }
