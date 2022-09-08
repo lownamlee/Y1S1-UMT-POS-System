@@ -25,7 +25,6 @@ int main(void)
     char option[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
 
-    header();
     printf("A simple console POS system.\n");
 
     do
@@ -36,6 +35,7 @@ int main(void)
             ans[i] = 0;
         }
 
+        header();
         printf("\n");
         printf("1. View Menu\n");
         printf("2. Sales Order\n");
