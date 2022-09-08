@@ -31,6 +31,7 @@ int main(void)
         for (int i = 0; i < MAX_INPUT; i++)
         {
             option[i] = 0;
+            ans[i] = 0;
         }
 
         printf("\n");
@@ -71,6 +72,21 @@ int main(void)
             rewind(stdin);
             gets(ans);
             ans[0] = toupper(ans[0]);
+
+            while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+            {
+                printf("Invalid answer.\n");
+
+                for (int i = 0; i < MAX_INPUT; i++)
+                {
+                    ans[i] = 0;
+                }
+
+                printf("Continue to exit? (Y = Yes, N = No): ");
+                rewind(stdin);
+                gets(ans);
+                ans[0] = toupper(ans[0]);
+            }
 
             if (ans[0] == 'Y')
                 printf("Exiting program.\n");
