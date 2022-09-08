@@ -19,6 +19,7 @@ char quit();
 void error();
 void box(int line);
 void header();
+void footer();
 
 int main(void)
 {
@@ -371,6 +372,11 @@ void header()
 {
     box(1);
     printf("       UMT Programming Bookstore\n");
+    box(1);
+}
+
+void footer()
+{
     box(1);
 }
 
