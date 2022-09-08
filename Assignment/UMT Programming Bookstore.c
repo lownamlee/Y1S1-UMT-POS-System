@@ -15,6 +15,7 @@ void web();
 void mobile();
 void salesOrder();
 void report(int sales, int totalQty[]);
+char quit();
 
 int main(void)
 {
@@ -68,34 +69,44 @@ int main(void)
         }
         else if (option[0] == 3)
         {
-            printf("Continue to exit? (Y = Yes, N = No): ");
-            rewind(stdin);
-            gets(ans);
-            ans[0] = toupper(ans[0]);
+            ans[0] = quit();
 
-            while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
-            {
-                printf("Invalid answer.\n");
-
-                for (int i = 0; i < MAX_INPUT; i++)
-                {
-                    ans[i] = 0;
-                }
-
-                printf("Continue to exit? (Y = Yes, N = No): ");
-                rewind(stdin);
-                gets(ans);
-                ans[0] = toupper(ans[0]);
-            }
-
-            if (ans[0] == 'Y')
-                printf("Exiting program.\n");
-            else
+            if (ans[0] == 'N')
                 option[0] = 0;
         }
     } while (option[0] != 3);
 
     return 0;
+}
+
+char quit()
+{
+    char ans[MAX_INPUT] = { 0 };
+
+    printf("Continue to exit? (Y = Yes, N = No): ");
+    rewind(stdin);
+    gets(ans);
+    ans[0] = toupper(ans[0]);
+
+    while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+    {
+        printf("Invalid answer.\n");
+
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            ans[i] = 0;
+        }
+
+        printf("Continue to exit? (Y = Yes, N = No): ");
+        rewind(stdin);
+        gets(ans);
+        ans[0] = toupper(ans[0]);
+    }
+
+    if (ans[0] == 'Y')
+        printf("Exiting program.\n");
+
+    return ans[0];
 }
 
 void salesOrder()
