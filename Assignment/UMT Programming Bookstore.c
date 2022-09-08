@@ -19,6 +19,7 @@ void report(int sales, int totalQty[]);
 int main(void)
 {
     char option[MAX_INPUT] = { 0 };
+    char ans[MAX_INPUT] = { 0 };
 
     printf("========================================\n");
     printf("       UMT Programming Bookstore\n");
@@ -66,7 +67,15 @@ int main(void)
         }
         else if (option[0] == 3)
         {
-            printf("Exiting program.\n");
+            printf("Continue to exit? (Y = Yes, N = No): ");
+            rewind(stdin);
+            gets(ans);
+            ans[0] = toupper(ans[0]);
+
+            if (ans[0] == 'Y')
+                printf("Exiting program.\n");
+            else
+                option[0] = 0;
         }
     } while (option[0] != 3);
 
