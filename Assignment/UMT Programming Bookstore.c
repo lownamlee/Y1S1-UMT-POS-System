@@ -18,15 +18,14 @@ void report(int sales, int totalQty[]);
 char quit();
 void error();
 void box(int line);
+void header();
 
 int main(void)
 {
     char option[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
 
-    box(1);
-    printf("       UMT Programming Bookstore\n");
-    box(1);
+    header();
     printf("A simple console POS system.\n");
 
     do
@@ -366,6 +365,13 @@ void mobile()
 void error()
 {
     printf("Invalid input, please try it again\n");
+}
+
+void header()
+{
+    box(1);
+    printf("       UMT Programming Bookstore\n");
+    box(1);
 }
 
 void box(int line)
