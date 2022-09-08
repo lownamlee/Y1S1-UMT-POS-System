@@ -24,9 +24,9 @@ int main(void)
     char option[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
 
-    printf("========================================\n");
+    box(1);
     printf("       UMT Programming Bookstore\n");
-    printf("========================================\n");
+    box(1);
     printf("A simple console POS system.\n");
 
     do
