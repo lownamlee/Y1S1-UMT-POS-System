@@ -20,6 +20,7 @@ void error();
 void box(int line);
 void header();
 void footer();
+void prompt();
 
 int main(void)
 {
@@ -37,6 +38,7 @@ int main(void)
         }
 
         header();
+        prompt();
         printf("\n");
         printf("1. View Menu\n");
         printf("2. Sales Order\n");
@@ -298,6 +300,7 @@ void menu()
     char menuOpt[MAX_INPUT] = { 0 };
 
     printf("\nMenu Lists\n");
+    prompt();
     printf("1. Software Development Programming\n");
     printf("2. Web Programming\n");
     printf("3. Mobile Programming\n");
@@ -316,6 +319,7 @@ void menu()
         }
 
         printf("\nMenu Lists\n");
+        prompt();
         printf("1. Software Development Programming\n");
         printf("2. Web Programming\n");
         printf("3. Mobile Programming\n");
@@ -382,6 +386,11 @@ void header()
 void footer()
 {
     box(1);
+}
+
+void prompt()
+{
+    printf("Select an option\n");
 }
 
 void box(int line)
