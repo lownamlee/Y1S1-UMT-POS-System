@@ -16,6 +16,7 @@ void mobile();
 void salesOrder();
 void report(int sales, int totalQty[]);
 char quit();
+void error();
 
 int main(void)
 {
@@ -46,7 +47,7 @@ int main(void)
 
         while (option[0] < 1 || option[0] > 3 || option[1] != 0)
         {
-            printf("Invalid option.\n");
+            error();
 
             for (int i = 0; i < MAX_INPUT; i++)
             {
@@ -90,7 +91,7 @@ char quit()
 
     while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
     {
-        printf("Invalid answer.\n");
+        error();
 
         for (int i = 0; i < MAX_INPUT; i++)
         {
@@ -145,7 +146,7 @@ void salesOrder()
 
             while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
             {
-                printf("Invalid book code.\n");
+                error();
 
                 for (int i = 0; i < MAX_INPUT; i++)
                 {
@@ -167,7 +168,7 @@ void salesOrder()
 
                 while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
                 {
-                    printf("Invalid answer.\n");
+                    error();
 
                     for (int i = 0; i < MAX_INPUT; i++)
                     {
@@ -194,7 +195,7 @@ void salesOrder()
             {
                 while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
                 {
-                    printf("Invalid quantity.\n");
+                    error();
 
                     for (int j = 0; j < MAX_INPUT; j++)
                     {
@@ -253,7 +254,7 @@ void salesOrder()
 
         while (choice[0] != 'Y' && choice[0] != 'N' || choice[1] != 0)
         {
-            printf("Invalid answer.\n");
+            error();
 
             for (int i = 0; i < MAX_INPUT; i++)
             {
@@ -304,7 +305,7 @@ void menu()
 
     while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
     {
-        printf("Invalid menu category.\n");
+        error();
 
         for (int i = 0; i < MAX_INPUT; i++)
         {
@@ -359,4 +360,9 @@ void mobile()
     printf("G > Mobile Design and Programming         73.50\n");
     printf("H > Start Building Mobile App             80.00\n");
     printf("I > Android Programming                   50.00\n");
+}
+
+void error()
+{
+    printf("Invalid input, please try it again\n");
 }
