@@ -15,6 +15,7 @@ void web();
 void mobile();
 void salesOrder();
 void report(int sales, int totalQty[]);
+void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
 char quit();
 void error();
 void box(int line);
@@ -236,34 +237,7 @@ void salesOrder()
             printf("Subtotal: RM%.2lf\n", subtotal);
         }
 
-        printf("Order complete. Subtotal: RM%.2lf\n", subtotal);
-        subtotal = 0;
-
-        printf("\nReceipt\n");
-        for (int i = 0; i < 9; i++)
-        {
-            priceBook[i] = qty[i] * BOOK_PRICE[i];
-            subtotal += priceBook[i];
-
-            if (priceBook[i] != 0)
-                printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
-        }
-
-        if (subtotal > 500)
-            discount = subtotal * DISCOUNT_RATE_500;
-        else if (subtotal > 300)
-            discount = subtotal * DISCOUNT_RATE_300;
-        else if (subtotal > 200)
-            discount = subtotal * DISCOUNT_RATE_200;
-        else
-            discount = 0.0;
-
-        total = subtotal - discount;
-
-        printf("| Subtotal: RM%.2lf |\n", subtotal);
-        printf("| Discount: RM%.2lf |\n", discount);
-        printf("| Total to pay: RM%.2lf |\n", total);
-        footer();
+        output(qty, priceBook, &subtotal, &discount, &total);
         printf("Next order? (Y = Yes, N = No): ");
         rewind(stdin);
         gets(choice);
@@ -286,6 +260,38 @@ void salesOrder()
     } while (choice[0] == 'Y');
 
     report(sales, totalQty);
+}
+
+void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
+{
+    printf("Order complete. Subtotal: RM%.2lf\n", *subtotal);
+    *subtotal = 0;
+
+    printf("\nReceipt\n");
+    for (int i = 0; i < 9; i++)
+    {
+        priceBook[i] = qty[i] * BOOK_PRICE[i];
+        *subtotal += priceBook[i];
+
+        if (priceBook[i] != 0)
+            printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+    }
+
+    if (*subtotal > 500)
+        *discount = *subtotal * DISCOUNT_RATE_500;
+    else if (*subtotal > 300)
+        *discount = *subtotal * DISCOUNT_RATE_300;
+    else if (*subtotal > 200)
+        *discount = *subtotal * DISCOUNT_RATE_200;
+    else
+        *discount = 0.0;
+
+    *total = *subtotal - *discount;
+
+    printf("| Subtotal: RM%.2lf |\n", *subtotal);
+    printf("| Discount: RM%.2lf |\n", *discount);
+    printf("| Total to pay: RM%.2lf |\n", *total);
+    footer();
 }
 
 void report(int sales, int totalQty[])
