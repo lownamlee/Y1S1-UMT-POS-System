@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <time.h>
 #define MAX_INPUT 1000
 
 const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
@@ -26,6 +27,7 @@ void footer();
 void prompt();
 void intro();
 void outro();
+void delay(int lateRate);
 
 int main(void)
 {
@@ -429,5 +431,14 @@ void box(int line)
     for (int i = 0; i < line; i++)
     {
         printf("--------------------------------------------------------\n");
+    }
+}
+
+void delay(int lateRate)
+{
+    int start = clock();
+
+    while (clock() < start + lateRate)
+    {
     }
 }
