@@ -28,6 +28,7 @@ void prompt();
 void intro();
 void outro();
 void delay(int lateRate);
+void typing(char text[]);
 
 int main(void)
 {
@@ -440,5 +441,14 @@ void delay(int lateRate)
 
     while (clock() < start + lateRate)
     {
+    }
+}
+
+void typing(char text[])
+{
+    for (int i = 0; i < strlen(text); i++)
+    {
+        printf("%c", text[i]);
+        delay(20);
     }
 }
