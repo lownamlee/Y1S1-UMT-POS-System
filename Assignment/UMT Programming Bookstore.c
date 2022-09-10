@@ -415,9 +415,9 @@ void error()
 void header()
 {
     box(1);
-    printf("       UMT Programming Bookstore\n");
-    printf("Time: %s\n", __TIME__);
-    printf("Date: %s                     UMT POS SYSTEM\n", __DATE__);
+    printf("|              UMT Programming Bookstore              |\n");
+    printf("| Time: %s                                      |\n", __TIME__);
+    printf("| Date: %s                     UMT POS SYSTEM |\n", __DATE__);
     box(1);
 }
 
