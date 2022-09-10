@@ -15,6 +15,7 @@ void web();
 void mobile();
 void salesOrder();
 void report(int sales, int totalQty[]);
+void input(int qty[]);
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[]);
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
 char quit();
@@ -136,9 +137,6 @@ void salesOrder()
 
     do
     {
-        char index[MAX_INPUT] = { 0 };
-        char qtyInput[MAX_INPUT] = { 0 };
-        char ans[MAX_INPUT] = { 0 };
         int qty[9] = { 0 };
         double priceBook[9] = { 0 };
         double subtotal = 0;
@@ -149,89 +147,7 @@ void salesOrder()
 
         printf("\nSales Order\n");
         printf("Sales Order No: %d\n", sales);
-        while (1)
-        {
-            for (int i = 0; i < MAX_INPUT; i++)
-            {
-                index[i] = 0;
-                qtyInput[i] = 0;
-            }
-
-            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
-            rewind(stdin);
-            gets(index);
-            index[0] = toupper(index[0]);
-
-            while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
-            {
-                error();
-
-                for (int i = 0; i < MAX_INPUT; i++)
-                {
-                    index[i] = 0;
-                }
-
-                printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
-                rewind(stdin);
-                gets(index);
-                index[0] = toupper(index[0]);
-            }
-
-            if (index[0] == 'X')
-            {
-                printf("Confirm the order? (Y = Yes, N = No): ");
-                rewind(stdin);
-                gets(ans);
-                ans[0] = toupper(ans[0]);
-
-                while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
-                {
-                    error();
-
-                    for (int i = 0; i < MAX_INPUT; i++)
-                    {
-                        ans[i] = 0;
-                    }
-
-                    printf("Confirm the order? (Y = Yes, N = No): ");
-                    rewind(stdin);
-                    gets(ans);
-                    ans[0] = toupper(ans[0]);
-                }
-
-                if (ans[0] == 'Y')
-                    break;
-                else
-                    continue;
-            }
-
-            printf("Quantity: ");
-            rewind(stdin);
-            gets(qtyInput);
-
-            for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
-            {
-                while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
-                {
-                    error();
-
-                    for (int j = 0; j < MAX_INPUT; j++)
-                    {
-                        qtyInput[j] = 0;
-                    }
-
-                    printf("Quantity: ");
-                    rewind(stdin);
-                    gets(qtyInput);
-                    i = 0;
-                }
-            }
-
-            index[0] -= 65;
-            qty[index[0]] += atoi(qtyInput);
-
-            printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
-        }
+        input(qty);
 
         process(qty, priceBook, &subtotal, &discount, &total, totalQty);
         output(qty, priceBook, &subtotal, &discount, &total);
@@ -257,6 +173,97 @@ void salesOrder()
     } while (choice[0] == 'Y');
 
     report(sales, totalQty);
+}
+
+void input(int qty[])
+{
+    char index[MAX_INPUT] = { 0 };
+    char qtyInput[MAX_INPUT] = { 0 };
+    char ans[MAX_INPUT] = { 0 };
+
+    while (1)
+    {
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            index[i] = 0;
+            qtyInput[i] = 0;
+        }
+
+        printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+        rewind(stdin);
+        gets(index);
+        index[0] = toupper(index[0]);
+
+        while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
+        {
+            error();
+
+            for (int i = 0; i < MAX_INPUT; i++)
+            {
+                index[i] = 0;
+            }
+
+            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+            rewind(stdin);
+            gets(index);
+            index[0] = toupper(index[0]);
+        }
+
+        if (index[0] == 'X')
+        {
+            printf("Confirm the order? (Y = Yes, N = No): ");
+            rewind(stdin);
+            gets(ans);
+            ans[0] = toupper(ans[0]);
+
+            while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+            {
+                error();
+
+                for (int i = 0; i < MAX_INPUT; i++)
+                {
+                    ans[i] = 0;
+                }
+
+                printf("Confirm the order? (Y = Yes, N = No): ");
+                rewind(stdin);
+                gets(ans);
+                ans[0] = toupper(ans[0]);
+            }
+
+            if (ans[0] == 'Y')
+                break;
+            else
+                continue;
+        }
+
+        printf("Quantity: ");
+        rewind(stdin);
+        gets(qtyInput);
+
+        for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
+        {
+            while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
+            {
+                error();
+
+                for (int j = 0; j < MAX_INPUT; j++)
+                {
+                    qtyInput[j] = 0;
+                }
+
+                printf("Quantity: ");
+                rewind(stdin);
+                gets(qtyInput);
+                i = 0;
+            }
+        }
+
+        index[0] -= 65;
+        qty[index[0]] += atoi(qtyInput);
+
+        printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
+    }
 }
 
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[])
