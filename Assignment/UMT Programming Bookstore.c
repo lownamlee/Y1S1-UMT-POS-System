@@ -42,10 +42,10 @@ int main(void)
         header();
         prompt();
         printf("\n");
-        printf("1. View Menu\n");
-        printf("2. Sales Order\n");
-        printf("3. Exit\n");
-        printf("Choose an option: ");
+        printf("| 1. View Menu                                         |\n");
+        printf("| 2. Sales Order                                       |\n");
+        printf("| 3. Exit                                              |\n");
+        printf("| Choose an option: ");
         rewind(stdin);
         gets(option);
         option[0] -= 48;
@@ -59,7 +59,7 @@ int main(void)
                 option[i] = 0;
             }
 
-            printf("Choose an option: ");
+            printf("| Choose an option: ");
             rewind(stdin);
             gets(option);
             option[0] -= 48;
