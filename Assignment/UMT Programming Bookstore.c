@@ -99,6 +99,7 @@ void intro()
 
 void outro()
 {
+    typing("Shutting down...\n");
     printf("Shut down successfully!!\n");
 }
 
