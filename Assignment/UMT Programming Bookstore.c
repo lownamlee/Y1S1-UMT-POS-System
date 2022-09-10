@@ -246,7 +246,7 @@ void salesOrder()
             subtotal += priceBook[i];
 
             if (priceBook[i] != 0)
-                printf("Book %c : %d @ RM%.2lf = RM%.2lf\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+                printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
         }
 
         if (subtotal > 500)
@@ -260,9 +260,9 @@ void salesOrder()
 
         total = subtotal - discount;
 
-        printf("Subtotal: RM%.2lf\n", subtotal);
-        printf("Discount: RM%.2lf\n", discount);
-        printf("Total to pay: RM%.2lf\n", total);
+        printf("| Subtotal: RM%.2lf |\n", subtotal);
+        printf("| Discount: RM%.2lf |\n", discount);
+        printf("| Total to pay: RM%.2lf |\n", total);
         footer();
         printf("Next order? (Y = Yes, N = No): ");
         rewind(stdin);
