@@ -15,6 +15,7 @@ void web();
 void mobile();
 void salesOrder();
 void report(int sales, int totalQty[]);
+void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[]);
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
 char quit();
 void error();
@@ -228,15 +229,11 @@ void salesOrder()
 
             index[0] -= 65;
             qty[index[0]] += atoi(qtyInput);
-            totalQty[index[0]] += atoi(qtyInput);
-            priceBook[index[0]] = atoi(qtyInput) * BOOK_PRICE[index[0]];
-            subtotal += priceBook[index[0]];
 
             printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
-            printf("Item total: RM%.2lf\n", priceBook[index[0]]);
-            printf("Subtotal: RM%.2lf\n", subtotal);
         }
 
+        process(qty, priceBook, &subtotal, &discount, &total, totalQty);
         output(qty, priceBook, &subtotal, &discount, &total);
         printf("Next order? (Y = Yes, N = No): ");
         rewind(stdin);
@@ -262,19 +259,13 @@ void salesOrder()
     report(sales, totalQty);
 }
 
-void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
+void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[])
 {
-    printf("Order complete. Subtotal: RM%.2lf\n", *subtotal);
-    *subtotal = 0;
-
-    printf("\nReceipt\n");
     for (int i = 0; i < 9; i++)
     {
         priceBook[i] = qty[i] * BOOK_PRICE[i];
         *subtotal += priceBook[i];
-
-        if (priceBook[i] != 0)
-            printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+        totalQty[i] += qty[i];
     }
 
     if (*subtotal > 500)
@@ -287,6 +278,18 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
         *discount = 0.0;
 
     *total = *subtotal - *discount;
+}
+
+void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
+{
+    printf("Order complete. Subtotal: RM%.2lf\n", *subtotal);
+
+    printf("\nReceipt\n");
+    for (int i = 0; i < 9; i++)
+    {
+        if (priceBook[i] != 0)
+            printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+    }
 
     printf("| Subtotal: RM%.2lf |\n", *subtotal);
     printf("| Discount: RM%.2lf |\n", *discount);
