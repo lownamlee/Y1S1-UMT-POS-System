@@ -21,13 +21,15 @@ void box(int line);
 void header();
 void footer();
 void prompt();
+void intro();
+void outro();
 
 int main(void)
 {
     char option[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
 
-    printf("A simple console POS system.\n");
+    intro();
 
     do
     {
@@ -80,7 +82,18 @@ int main(void)
         }
     } while (option[0] != 3);
 
+    outro();
     return 0;
+}
+
+void intro()
+{
+    printf("A simple console POS system.\n");
+}
+
+void outro()
+{
+    printf("Shut down successfully!!\n");
 }
 
 char quit()
