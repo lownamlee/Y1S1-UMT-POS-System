@@ -260,10 +260,10 @@ void salesOrder()
 
         total = subtotal - discount;
 
-    printf("Subtotal: RM%.2lf\n", subtotal);
-    printf("Discount: RM%.2lf\n", discount);
-    printf("Total to pay: RM%.2lf\n", total);
-    footer();
+        printf("Subtotal: RM%.2lf\n", subtotal);
+        printf("Discount: RM%.2lf\n", discount);
+        printf("Total to pay: RM%.2lf\n", total);
+        footer();
         printf("Next order? (Y = Yes, N = No): ");
         rewind(stdin);
         gets(choice);
