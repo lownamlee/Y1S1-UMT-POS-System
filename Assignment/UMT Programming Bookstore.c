@@ -29,6 +29,7 @@ void intro();
 void outro();
 void delay(int lateRate);
 void typing(char text[]);
+void cursorMove(int move);
 
 int main(void)
 {
@@ -454,5 +455,13 @@ void typing(char text[])
     {
         printf("%c", text[i]);
         delay(20);
+    }
+}
+
+void cursorMove(int move)
+{
+    for (int i = 0; i < move; i++)
+    {
+        printf("\b");
     }
 }
