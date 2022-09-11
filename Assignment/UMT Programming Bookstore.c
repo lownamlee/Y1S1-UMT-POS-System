@@ -107,6 +107,12 @@ void intro()
 void outro()
 {
     typing("Shutting down...\n");
+    for (int i = 3; i > 0; i--)
+    {
+        printf("%d\n", i);
+        delay(300);
+    }
+
     printf("Shut down successfully!!\n");
 }
 
