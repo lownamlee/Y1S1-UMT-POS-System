@@ -171,6 +171,7 @@ void salesOrder()
 
         sales++;
 
+        header();
         printf("\nSales Order\n");
         printf("Sales Order No: %d\n", sales);
         input(qty);
