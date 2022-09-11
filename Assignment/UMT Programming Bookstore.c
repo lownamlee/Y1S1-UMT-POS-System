@@ -161,7 +161,8 @@ void salesOrder()
 
         process(qty, priceBook, &subtotal, &discount, &total, totalQty);
         output(qty, priceBook, &subtotal, &discount, &total);
-        printf("Next order? (Y = Yes, N = No): ");
+        printf("| Next order? (Y = Yes, N = No):                  |");
+        cursorMove(11);
         rewind(stdin);
         gets(choice);
         choice[0] = toupper(choice[0]);
@@ -175,7 +176,8 @@ void salesOrder()
                 choice[i] = 0;
             }
 
-            printf("Next order? (Y = Yes, N = No): ");
+            printf("| Next order? (Y = Yes, N = No):                  |");
+            cursorMove(11);
             rewind(stdin);
             gets(choice);
             choice[0] = toupper(choice[0]);
