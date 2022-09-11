@@ -30,6 +30,7 @@ void outro();
 void delay(int lateRate);
 void typing(char text[]);
 void cursorMove(int move);
+void slide(char text[]);
 
 int main(void)
 {
@@ -470,6 +471,17 @@ void typing(char text[])
         printf("%c", text[i]);
         delay(20);
     }
+}
+
+void slide(char text[])
+{
+    for (int i = 0; i < strlen(text); i++)
+    {
+        printf("%c", text[i]);
+        delay(15);
+    }
+
+    printf("\n");
 }
 
 void cursorMove(int move)
