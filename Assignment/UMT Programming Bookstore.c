@@ -347,9 +347,13 @@ void report(int sales, int totalQty[])
     int totalBook = 0;
     double totalPrice = 0;
 
-    printf("\nDaily Sales Order Summary Report\n");
-    printf("Total Number of Sales Orders = %d\n", sales);
-    printf("Book | Quantity Sold | Amount\n");
+    header();
+    box(1);
+    printf("|          DAILY SALES ORDER SUMMARY REPORT           |\n");
+    box(1);
+    printf("| Total Number of Sales Orders = %d                   |\n", sales);
+    box(1);
+    printf("| Book | Quantity Sold | Amount                       |\n");
 
     for (int i = 0; i < 9; i++)
     {
