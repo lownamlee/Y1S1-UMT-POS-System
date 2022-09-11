@@ -52,7 +52,8 @@ int main(void)
         printf("| 1. View Menu                                         |\n");
         printf("| 2. Sales Order                                       |\n");
         printf("| 3. Exit                                              |\n");
-        printf("| Choose an option: ");
+        printf("| Choose an option:                                    |");
+        cursorMove(36);
         rewind(stdin);
         gets(option);
         option[0] -= 48;
@@ -66,7 +67,8 @@ int main(void)
                 option[i] = 0;
             }
 
-            printf("| Choose an option: ");
+            printf("| Choose an option:                                    |");
+            cursorMove(36);
             rewind(stdin);
             gets(option);
             option[0] -= 48;
