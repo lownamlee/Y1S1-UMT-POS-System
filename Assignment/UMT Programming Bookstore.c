@@ -113,7 +113,8 @@ char quit()
 {
     char ans[MAX_INPUT] = { 0 };
 
-    printf("Continue to exit? (Y = Yes, N = No): ");
+    printf("| Continue to exit? (Y = Yes, N = No):             |");
+    cursorMove(13);
     rewind(stdin);
     gets(ans);
     ans[0] = toupper(ans[0]);
@@ -127,7 +128,8 @@ char quit()
             ans[i] = 0;
         }
 
-        printf("Continue to exit? (Y = Yes, N = No): ");
+        printf("| Continue to exit? (Y = Yes, N = No):             |");
+        cursorMove(13);
         rewind(stdin);
         gets(ans);
         ans[0] = toupper(ans[0]);
