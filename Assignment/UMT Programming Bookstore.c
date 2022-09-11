@@ -343,7 +343,8 @@ void menu()
     printf("| 1. Software Development Programming                 |\n");
     printf("| 2. Web Programming                                  |\n");
     printf("| 3. Mobile Programming                               |\n");
-    printf("| Input: ");
+    printf("| Input:                                             |");
+    cursorMove(45);
     rewind(stdin);
     gets(menuOpt);
     menuOpt[0] -= 48;
@@ -362,7 +363,8 @@ void menu()
         printf("| 1. Software Development Programming                 |\n");
         printf("| 2. Web Programming                                  |\n");
         printf("| 3. Mobile Programming                               |\n");
-        printf("| Input: ");
+        printf("| Input:                                             |");
+        cursorMove(45);
         rewind(stdin);
         gets(menuOpt);
         menuOpt[0] -= 48;
