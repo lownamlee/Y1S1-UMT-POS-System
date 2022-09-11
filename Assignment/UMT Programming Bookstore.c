@@ -199,7 +199,8 @@ void input(int qty[])
             qtyInput[i] = 0;
         }
 
-        printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+        printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
+        cursorMove(12);
         rewind(stdin);
         gets(index);
         index[0] = toupper(index[0]);
@@ -213,7 +214,8 @@ void input(int qty[])
                 index[i] = 0;
             }
 
-            printf("A, B, C, D, E, F, G, H, I (X - Exit): ");
+            printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
+            cursorMove(12);
             rewind(stdin);
             gets(index);
             index[0] = toupper(index[0]);
