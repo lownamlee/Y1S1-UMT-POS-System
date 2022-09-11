@@ -95,6 +95,7 @@ int main(void)
         {
             footer();
             system("pause");
+            header();
         }
     } while (option[0] != 3);
 
