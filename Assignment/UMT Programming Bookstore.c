@@ -90,6 +90,12 @@ int main(void)
             if (ans[0] == 'N')
                 option[0] = 0;
         }
+
+        if (option[0] == 1 || option[0] == 2)
+        {
+            footer();
+            system("pause");
+        }
     } while (option[0] != 3);
 
     outro();
