@@ -99,7 +99,7 @@ int main(void)
 void intro()
 {
     box(1);
-    printf("UMT POS SYSTEM\n");
+    slide("UMT POS SYSTEM");
     box(1);
     printf("A simple console POS system.\n");
 }
