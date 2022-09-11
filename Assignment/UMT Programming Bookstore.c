@@ -359,10 +359,10 @@ void report(int sales, int totalQty[])
     {
         totalBook += totalQty[i];
         totalPrice += totalQty[i] * BOOK_PRICE[i];
-        printf("%c | %d | %.2lf\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
+        printf("| %c | %14d | %8.2lf                       |\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
     }
 
-    printf("TOTAL | %d | %.2lf\n", totalBook, totalPrice);
+    printf("| TOTAL | %10d | %8.2lf                    |\n", totalBook, totalPrice);
     footer();
 }
 
