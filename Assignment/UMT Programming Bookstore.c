@@ -249,7 +249,8 @@ void input(int qty[])
                 continue;
         }
 
-        printf("Quantity: ");
+        printf("| Quantity:                                          |");
+        cursorMove(12);
         rewind(stdin);
         gets(qtyInput);
 
@@ -264,7 +265,8 @@ void input(int qty[])
                     qtyInput[j] = 0;
                 }
 
-                printf("Quantity: ");
+                printf("| Quantity:                                          |");
+                cursorMove(12);
                 rewind(stdin);
                 gets(qtyInput);
                 i = 0;
