@@ -338,6 +338,7 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
     printf("| Subtotal: RM%.2lf |\n", *subtotal);
     printf("| Discount: RM%.2lf |\n", *discount);
     printf("| Total to pay: RM%.2lf |\n", *total);
+    printf("|             THANK YOU, HAVE A NICE DAY!!            |\n");
     footer();
 }
 
