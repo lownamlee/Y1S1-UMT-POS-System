@@ -327,7 +327,7 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
 {
     printf("Order complete. Subtotal: RM%.2lf\n", *subtotal);
 
-    printf("\nReceipt\n");
+    printf("\n|                       Receipt                       |\n");
     for (int i = 0; i < 9; i++)
     {
         if (priceBook[i] != 0)
