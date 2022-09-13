@@ -465,7 +465,7 @@ void footer()
 
 void prompt()
 {
-    printf("Select an option\n");
+    printf("|                  Select an option                   |\n");
 }
 
 void box(int line)
