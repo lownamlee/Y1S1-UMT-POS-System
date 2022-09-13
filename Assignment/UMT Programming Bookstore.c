@@ -104,7 +104,8 @@ void intro()
     box(1);
     slide("UMT POS SYSTEM");
     box(1);
-    printf("A simple console POS system.\n");
+    printf("|        A simple console POS system.                 |\n");
+    box(1);
 }
 
 void outro()
