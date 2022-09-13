@@ -355,6 +355,7 @@ void report(int sales, int totalQty[])
     printf("| Total Number of Sales Orders = %d                   |\n", sales);
     box(1);
     printf("| Book | Quantity Sold | Amount                       |\n");
+    printf("| ---- | ------------- | ---------------------------- |\n");
 
     for (int i = 0; i < 9; i++)
     {
