@@ -97,7 +97,6 @@ int main(void)
     } while (ans[0] != 'Y');
 
     outro();
-    return 0;
 }
 
 void intro()
