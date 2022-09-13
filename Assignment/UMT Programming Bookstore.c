@@ -119,6 +119,8 @@ void outro()
     }
 
     printf("Shut down successfully!!\n");
+    footer();
+    exit(0);
 }
 
 char quit()
