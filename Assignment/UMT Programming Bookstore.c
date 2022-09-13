@@ -85,9 +85,6 @@ int main(void)
             break;
         case 3:
             ans[0] = quit();
-
-            if (ans[0] == 'N')
-                option[0] = 0;
         }
 
         if (option[0] == 1 || option[0] == 2)
@@ -96,7 +93,7 @@ int main(void)
             system("pause");
             header();
         }
-    } while (option[0] != 3);
+    } while (ans[0] != 'Y');
 
     outro();
     return 0;
