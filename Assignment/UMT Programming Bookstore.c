@@ -75,16 +75,15 @@ int main(void)
             option[0] -= 48;
         }
 
-        if (option[0] == 1)
+        switch (option[0])
         {
+        case 1:
             menu();
-        }
-        else if (option[0] == 2)
-        {
+            break;
+        case 2:
             salesOrder();
-        }
-        else if (option[0] == 3)
-        {
+            break;
+        case 3:
             ans[0] = quit();
 
             if (ans[0] == 'N')
