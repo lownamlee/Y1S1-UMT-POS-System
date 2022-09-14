@@ -450,7 +450,9 @@ void mobile()
 void error()
 {
     printf("\a");
-    printf("Invalid input, please try it again\n");
+    box(1);
+    printf("| Invalid input, please try it again                  |\n");
+    box(1);
 }
 
 void header()
