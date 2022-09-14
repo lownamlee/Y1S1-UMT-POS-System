@@ -48,7 +48,6 @@ int main(void)
 
         header();
         prompt();
-        printf("\n");
         box(1);
         printf("|                     Main Menu                       |\n");
         box(1);
