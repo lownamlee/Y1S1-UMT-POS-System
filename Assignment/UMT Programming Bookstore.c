@@ -50,7 +50,9 @@ int main(void)
         header();
         prompt();
         printf("\n");
+        box(1);
         printf("|                     Main Menu                       |\n");
+        box(1);
         printf("| 1. View Menu                                         |\n");
         printf("| 2. Sales Order                                       |\n");
         printf("| 3. Exit                                              |\n");
