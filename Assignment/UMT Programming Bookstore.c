@@ -480,7 +480,9 @@ void footer()
 
 void prompt()
 {
+    box(1);
     printf("|                  Select an option                   |\n");
+    box(1);
 }
 
 void box(int line)
