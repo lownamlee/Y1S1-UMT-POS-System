@@ -374,7 +374,9 @@ void menu()
 {
     char menuOpt[MAX_INPUT] = { 0 };
 
-    printf("\n|                     Menu Lists                      |\n");
+    box(1);
+    printf("|                     Menu Lists                      |\n");
+    box(1);
     prompt();
     printf("| 1. Software Development Programming                 |\n");
     printf("| 2. Web Programming                                  |\n");
@@ -394,7 +396,9 @@ void menu()
             menuOpt[i] = 0;
         }
 
-        printf("\n|                     Menu Lists                      |\n");
+        box(1);
+        printf("|                     Menu Lists                      |\n");
+        box(1);
         prompt();
         printf("| 1. Software Development Programming                 |\n");
         printf("| 2. Web Programming                                  |\n");
