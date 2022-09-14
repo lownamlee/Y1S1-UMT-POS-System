@@ -332,7 +332,7 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
     for (int i = 0; i < 9; i++)
     {
         if (priceBook[i] != 0)
-            printf("| Book %c : %d @ RM%.2lf = RM%.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+            printf("| Book %c : %5d @ RM%5.2lf = RM%8.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
     }
 
     box(1);
