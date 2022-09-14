@@ -162,6 +162,8 @@ void salesOrder()
     int sales = 0;
     int totalQty[9] = { 0 };
 
+    footer();
+
     do
     {
         int qty[9] = { 0 };
