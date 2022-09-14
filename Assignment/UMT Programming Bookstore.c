@@ -449,6 +449,7 @@ void mobile()
 
 void error()
 {
+    printf("\a");
     printf("Invalid input, please try it again\n");
 }
 
