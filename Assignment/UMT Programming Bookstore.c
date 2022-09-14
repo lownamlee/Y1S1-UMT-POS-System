@@ -104,6 +104,7 @@ void intro()
     box(1);
     slide("UMT POS SYSTEM");
     box(1);
+    typing("Welcome to UMT Programming Bookstore\n");
     printf("|        A simple console POS system.                 |\n");
     box(1);
 }
