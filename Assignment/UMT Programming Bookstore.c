@@ -301,8 +301,6 @@ void input(int qty[])
 
         index[0] -= 65;
         qty[index[0]] += atoi(qtyInput);
-
-        printf("Book %c quantity: %d\n", index[0] + 65, qty[index[0]]);
     }
 }
 
