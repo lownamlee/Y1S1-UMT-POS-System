@@ -327,8 +327,6 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
 
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
 {
-    printf("Order complete. Subtotal: RM%.2lf\n", *subtotal);
-
     printf("\n|                       Receipt                       |\n");
     for (int i = 0; i < 9; i++)
     {
