@@ -35,7 +35,7 @@ void slide(char text[]);
 int main(void)
 {
     char option[MAX_INPUT] = { 0 };
-    char ans[MAX_INPUT] = { 0 };
+    char ans = 'N';
 
     intro();
 
@@ -44,7 +44,6 @@ int main(void)
         for (int i = 0; i < MAX_INPUT; i++)
         {
             option[i] = 0;
-            ans[i] = 0;
         }
 
         header();
@@ -87,7 +86,7 @@ int main(void)
             salesOrder();
             break;
         case 3:
-            ans[0] = quit();
+            ans = quit();
         }
 
         if (option[0] == 1 || option[0] == 2)
@@ -96,7 +95,7 @@ int main(void)
             system("pause");
             header();
         }
-    } while (ans[0] != 'Y');
+    } while (ans != 'Y');
 
     outro();
 }
