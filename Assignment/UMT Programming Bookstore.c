@@ -179,6 +179,8 @@ void salesOrder()
         box(1);
         printf("|                  Sales Order No: %d                 |\n", sales);
         box(1);
+        printf("|                                             Input   |\n");
+        box(1);
         input(qty);
 
         process(qty, priceBook, &subtotal, &discount, &total, totalQty);
