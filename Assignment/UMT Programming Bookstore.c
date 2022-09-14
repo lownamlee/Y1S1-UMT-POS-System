@@ -207,6 +207,8 @@ void salesOrder()
             gets(choice);
             choice[0] = toupper(choice[0]);
         }
+
+        footer();
     } while (choice[0] == 'Y');
 
     report(sales, totalQty);
