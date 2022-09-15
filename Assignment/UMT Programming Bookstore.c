@@ -253,7 +253,7 @@ void input(int qty[])
 
         if (index[0] == 'X')
         {
-            printf("| Confirm the order? (Y = Yes, N = No):            |");
+            printf("|    Confirm the order? (Y = Yes, N = No):            |");
             cursorMove(12);
             rewind(stdin);
             gets(ans);
@@ -268,7 +268,7 @@ void input(int qty[])
                     ans[i] = 0;
                 }
 
-                printf("| Confirm the order? (Y = Yes, N = No):            |");
+                printf("|    Confirm the order? (Y = Yes, N = No):            |");
                 cursorMove(12);
                 rewind(stdin);
                 gets(ans);
