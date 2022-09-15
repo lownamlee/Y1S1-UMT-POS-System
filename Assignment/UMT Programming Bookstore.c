@@ -21,10 +21,10 @@ void mobile();
 
 // Part 2
 void salesOrder();
-void report(int sales, int totalQty[]);
 void input(int qty[]);
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[]);
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
+void report(int sales, int totalQty[]);
 
 // Part 3
 char quit();
