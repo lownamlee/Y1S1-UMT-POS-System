@@ -46,11 +46,14 @@ const double DISCOUNT_RATE_500 = 0.15;
 
 int main(void)
 {
+    // LOCAL DECLARATION & INITIALIZATION
     char option[MAX_INPUT] = { 0 };
     char ans = 'N';
 
+    // LAYOUT
     intro();
 
+    // LOOP
     do
     {
         for (int i = 0; i < MAX_INPUT; i++)
@@ -90,6 +93,7 @@ int main(void)
             option[0] -= 48;
         }
 
+        // OUTPUT
         switch (option[0])
         {
         case 1:
