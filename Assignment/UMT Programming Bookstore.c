@@ -340,10 +340,10 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
             printf("| Book %c : %5d @ RM%5.2lf = RM%8.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
     }
 
-    box(1);
-    printf("| Subtotal: RM%.2lf |\n", *subtotal);
-    printf("| Discount: RM%.2lf |\n", *discount);
-    printf("| Total to pay: RM%.2lf |\n", *total);
+    printf("|                                          ========== |\n");
+    printf("| Subtotal                             = RM%8.2lf |\n", *subtotal);
+    printf("| Discount                             = RM%8.2lf |\n", *discount);
+    printf("| Total to pay                         = RM%8.2lf |\n", *total);
     printf("|             THANK YOU, HAVE A NICE DAY!!            |\n");
     footer();
 }
