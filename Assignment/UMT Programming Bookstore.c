@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 #include <time.h>
+#include <string.h>
 #define MAX_INPUT 1000 // program crashes if user input exceeds this number of digits
 
 // GLOBAL DECLARATION (constant)
