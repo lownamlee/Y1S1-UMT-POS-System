@@ -175,7 +175,9 @@ void salesOrder()
 
         header();
         box(1);
-        printf("|                    Sales Order                     |\n");
+        printf("|                  +              +                   |\n");
+        printf("|                  |  Sales Order |                   |\n");
+        printf("|                  +              +                   |\n");
         box(1);
         printf("|                  Sales Order No: %d                 |\n", sales);
         box(1);
