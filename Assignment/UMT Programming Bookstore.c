@@ -49,7 +49,9 @@ int main(void)
         header();
         prompt();
         box(1);
-        printf("|                     Main Menu                       |\n");
+        printf("|                +               +                    |\n");
+        printf("|                |   Main Menu   |                    |\n");
+        printf("|                +               +                    |\n");
         box(1);
         printf("| 1. View Menu                                         |\n");
         printf("| 2. Sales Order                                       |\n");
