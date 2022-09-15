@@ -175,14 +175,18 @@ char quit()
 
 void salesOrder()
 {
+    // LOCAL DECLARATION & INITIALIZATION
     char choice[MAX_INPUT] = { 0 };
     int sales = 0;
     int totalQty[9] = { 0 };
 
+    // LAYOUT
     footer();
 
+    // LOOP
     do
     {
+        // reset each order value whenever the order loops
         int qty[9] = { 0 };
         double priceBook[9] = { 0 };
         double subtotal = 0;
@@ -201,10 +205,16 @@ void salesOrder()
         box(1);
         printf("|                                             Input   |\n");
         box(1);
+        // INPUT
         input(qty);
 
+        // PROCESS
         process(qty, priceBook, &subtotal, &discount, &total, totalQty);
+
+        // OUTPUT
         output(qty, priceBook, &subtotal, &discount, &total);
+
+        // INPUT
         box(1);
         printf("|           Next order? (Y = Yes, N = No):            |");
         cursorMove(11);
@@ -232,6 +242,7 @@ void salesOrder()
         footer();
     } while (choice[0] == 'Y');
 
+    // OUTPUT
     report(sales, totalQty);
 }
 
