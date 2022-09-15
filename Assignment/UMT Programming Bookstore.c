@@ -12,21 +12,31 @@ const double DISCOUNT_RATE_200 = 0.05;
 const double DISCOUNT_RATE_300 = 0.1;
 const double DISCOUNT_RATE_500 = 0.15;
 
+// MAIN PROGRAM FUNCTIONS
+// Part 1
 void menu();
 void software();
 void web();
 void mobile();
+
+// Part 2
 void salesOrder();
 void report(int sales, int totalQty[]);
 void input(int qty[]);
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[]);
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
+
+// Part 3
 char quit();
+
+// LAYOUT AND FEEDBACK
 void error();
 void box(int line);
 void header();
 void footer();
 void prompt();
+
+// INTRO AND SPECIAL EFFECTS
 void intro();
 void outro();
 void delay(int lateRate);
