@@ -359,14 +359,14 @@ void report(int sales, int totalQty[])
     box(1);
     printf("| Total Number of Sales Orders = %d                   |\n", sales);
     box(1);
-    printf("| Book | Quantity Sold | Amount                       |\n");
-    printf("| ---- | ------------- | ---------------------------- |\n");
+    printf("| Book |             Quantity Sold Sales |    Amount |\n");
+    printf("| ---- | ------------------------------- | --------- |\n");
 
     for (int i = 0; i < 9; i++)
     {
         totalBook += totalQty[i];
         totalPrice += totalQty[i] * BOOK_PRICE[i];
-        printf("| %c | %14d | %8.2lf                       |\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
+        printf("|    %c |                           %5d |  %8.2lf |\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
     }
 
     printf("|                                   =====   ========= |\n");
