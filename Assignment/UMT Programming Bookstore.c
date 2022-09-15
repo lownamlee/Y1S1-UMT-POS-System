@@ -1,10 +1,12 @@
+// PREPROCESSORS
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 #include <time.h>
-#define MAX_INPUT 1000
+#define MAX_INPUT 1000 // program crashes if user input exceeds this number of digits
 
+// GLOBAL DECLARATION (constant)
 const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
 const double DISCOUNT_RATE_200 = 0.05;
 const double DISCOUNT_RATE_300 = 0.1;
