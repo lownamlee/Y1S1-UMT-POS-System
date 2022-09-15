@@ -6,12 +6,6 @@
 #include <string.h>
 #define MAX_INPUT 1000 // program crashes if user input exceeds this number of digits
 
-// GLOBAL DECLARATION (constant)
-const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
-const double DISCOUNT_RATE_200 = 0.05;
-const double DISCOUNT_RATE_300 = 0.1;
-const double DISCOUNT_RATE_500 = 0.15;
-
 // MAIN PROGRAM FUNCTIONS
 // Part 1
 void menu();
@@ -43,6 +37,12 @@ void delay(int lateRate);
 void typing(char text[]);
 void cursorMove(int move);
 void slide(char text[]);
+
+// GLOBAL DECLARATION (constant)
+const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
+const double DISCOUNT_RATE_200 = 0.05;
+const double DISCOUNT_RATE_300 = 0.1;
+const double DISCOUNT_RATE_500 = 0.15;
 
 int main(void)
 {
