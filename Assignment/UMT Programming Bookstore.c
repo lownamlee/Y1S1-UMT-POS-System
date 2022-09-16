@@ -119,6 +119,7 @@ int main(void)
 
 void intro()
 {
+    // LAYOUT
     box(1);
     slide("UMT POS SYSTEM");
     box(1);
@@ -129,6 +130,7 @@ void intro()
 
 void outro()
 {
+    // OUTPUT
     typing("Shutting down...\n");
     for (int i = 3; i > 0; i--)
     {
@@ -138,6 +140,8 @@ void outro()
 
     printf("Shut down successfully!!\n");
     footer();
+
+    // EXIT
     exit(0);
 }
 
