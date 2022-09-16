@@ -452,34 +452,6 @@ void report(int sales, int totalQty[])
     footer();
 }
 
-void intro()
-{
-    // LAYOUT
-    box(1);
-    slide("UMT POS SYSTEM");
-    box(1);
-    typing("Welcome to UMT Programming Bookstore\n");
-    printf("|        A simple console POS system.                 |\n");
-    box(1);
-}
-
-void outro()
-{
-    // OUTPUT
-    typing("Shutting down...\n");
-    for (int i = 3; i > 0; i--)
-    {
-        printf("%d\n", i);
-        delay(300);
-    }
-
-    printf("Shut down successfully!!\n");
-    footer();
-
-    // EXIT
-    exit(0);
-}
-
 char quit()
 {
     // LOCAL DECLARATION & INITIALIZATION
@@ -514,6 +486,34 @@ char quit()
         printf("Exiting program.\n");
 
     return ans[0];
+}
+
+void intro()
+{
+    // LAYOUT
+    box(1);
+    slide("UMT POS SYSTEM");
+    box(1);
+    typing("Welcome to UMT Programming Bookstore\n");
+    printf("|        A simple console POS system.                 |\n");
+    box(1);
+}
+
+void outro()
+{
+    // OUTPUT
+    typing("Shutting down...\n");
+    for (int i = 3; i > 0; i--)
+    {
+        printf("%d\n", i);
+        delay(300);
+    }
+
+    printf("Shut down successfully!!\n");
+    footer();
+
+    // EXIT
+    exit(0);
 }
 
 void error()
