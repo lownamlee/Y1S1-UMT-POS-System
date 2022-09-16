@@ -554,6 +554,14 @@ void box(int line)
     }
 }
 
+void cursorMove(int move)
+{
+    for (int i = 0; i < move; i++)
+    {
+        printf("\b");
+    }
+}
+
 void delay(int lateRate)
 {
     int start = clock();
@@ -581,12 +589,4 @@ void slide(char text[])
     }
 
     printf("\n");
-}
-
-void cursorMove(int move)
-{
-    for (int i = 0; i < move; i++)
-    {
-        printf("\b");
-    }
 }
