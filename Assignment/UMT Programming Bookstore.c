@@ -117,6 +117,103 @@ int main(void)
     outro();
 }
 
+void menu()
+{
+    // LOCAL DECLARATION & INITIALIZATION
+    char menuOpt[MAX_INPUT] = { 0 };
+
+    // LAYOUT
+    box(1);
+    printf("|                +                 +                  |\n");
+    printf("|                |    Menu Lists   |                  |\n");
+    printf("|                +                 +                  |\n");
+    box(1);
+    prompt();
+    printf("| 1. Software Development Programming                 |\n");
+    printf("| 2. Web Programming                                  |\n");
+    printf("| 3. Mobile Programming                               |\n");
+    printf("| Input:                                             |");
+    cursorMove(45);
+
+    // INPUT
+    rewind(stdin);
+    gets(menuOpt);
+    menuOpt[0] -= 48;
+
+    // VALIDATION
+    while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
+    {
+        error();
+
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            menuOpt[i] = 0;
+        }
+
+        box(1);
+        printf("|                +                 +                  |\n");
+        printf("|                |    Menu Lists   |                  |\n");
+        printf("|                +                 +                  |\n");
+        box(1);
+        prompt();
+        printf("| 1. Software Development Programming                 |\n");
+        printf("| 2. Web Programming                                  |\n");
+        printf("| 3. Mobile Programming                               |\n");
+        printf("| Input:                                             |");
+        cursorMove(45);
+
+        // INPUT
+        rewind(stdin);
+        gets(menuOpt);
+        menuOpt[0] -= 48;
+    }
+
+    // OUTPUT
+    switch (menuOpt[0])
+    {
+    case 1:
+        software();
+        break;
+    case 2:
+        web();
+        break;
+    case 3:
+        mobile();
+    }
+
+    footer();
+}
+
+void software()
+{
+    // OUTPUT
+    printf("\nSoftware Development Programming\n");
+    printf("| Type                                   Price(RM) |\n");
+    printf("| A > Introduction to Java Programming      69.00 |\n");
+    printf("| B > Learn to Program with C (2015)        70.00 |\n");
+    printf("| C > Java For Dummies                      55.50 |\n");
+}
+
+void web()
+{
+    // OUTPUT
+    printf("\nWeb Programming\n");
+    printf("| Type                                   Price(RM) |\n");
+    printf("| D > Introduction to Web Programming       58.00 |\n");
+    printf("| E > Introduction HTML & CSS               65.00 |\n");
+    printf("| F > Introduction to PHP                   89.00 |\n");
+}
+
+void mobile()
+{
+    // OUTPUT
+    printf("\nMobile Programming\n");
+    printf("| Type                                   Price(RM) |\n");
+    printf("| G > Mobile Design and Programming         73.50 |\n");
+    printf("| H > Start Building Mobile App             80.00 |\n");
+    printf("| I > Android Programming                   50.00 |\n");
+}
+
 void intro()
 {
     // LAYOUT
@@ -417,103 +514,6 @@ void report(int sales, int totalQty[])
     printf("|                                   =====   ========= |\n");
     printf("| TOTAL                            %5d    %8.2lf |\n", totalBook, totalPrice);
     footer();
-}
-
-void menu()
-{
-    // LOCAL DECLARATION & INITIALIZATION
-    char menuOpt[MAX_INPUT] = { 0 };
-
-    // LAYOUT
-    box(1);
-    printf("|                +                 +                  |\n");
-    printf("|                |    Menu Lists   |                  |\n");
-    printf("|                +                 +                  |\n");
-    box(1);
-    prompt();
-    printf("| 1. Software Development Programming                 |\n");
-    printf("| 2. Web Programming                                  |\n");
-    printf("| 3. Mobile Programming                               |\n");
-    printf("| Input:                                             |");
-    cursorMove(45);
-
-    // INPUT
-    rewind(stdin);
-    gets(menuOpt);
-    menuOpt[0] -= 48;
-
-    // VALIDATION
-    while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
-    {
-        error();
-
-        for (int i = 0; i < MAX_INPUT; i++)
-        {
-            menuOpt[i] = 0;
-        }
-
-        box(1);
-        printf("|                +                 +                  |\n");
-        printf("|                |    Menu Lists   |                  |\n");
-        printf("|                +                 +                  |\n");
-        box(1);
-        prompt();
-        printf("| 1. Software Development Programming                 |\n");
-        printf("| 2. Web Programming                                  |\n");
-        printf("| 3. Mobile Programming                               |\n");
-        printf("| Input:                                             |");
-        cursorMove(45);
-
-        // INPUT
-        rewind(stdin);
-        gets(menuOpt);
-        menuOpt[0] -= 48;
-    }
-
-    // OUTPUT
-    switch (menuOpt[0])
-    {
-    case 1:
-        software();
-        break;
-    case 2:
-        web();
-        break;
-    case 3:
-        mobile();
-    }
-
-    footer();
-}
-
-void software()
-{
-    // OUTPUT
-    printf("\nSoftware Development Programming\n");
-    printf("| Type                                   Price(RM) |\n");
-    printf("| A > Introduction to Java Programming      69.00 |\n");
-    printf("| B > Learn to Program with C (2015)        70.00 |\n");
-    printf("| C > Java For Dummies                      55.50 |\n");
-}
-
-void web()
-{
-    // OUTPUT
-    printf("\nWeb Programming\n");
-    printf("| Type                                   Price(RM) |\n");
-    printf("| D > Introduction to Web Programming       58.00 |\n");
-    printf("| E > Introduction HTML & CSS               65.00 |\n");
-    printf("| F > Introduction to PHP                   89.00 |\n");
-}
-
-void mobile()
-{
-    // OUTPUT
-    printf("\nMobile Programming\n");
-    printf("| Type                                   Price(RM) |\n");
-    printf("| G > Mobile Design and Programming         73.50 |\n");
-    printf("| H > Start Building Mobile App             80.00 |\n");
-    printf("| I > Android Programming                   50.00 |\n");
 }
 
 void error()
