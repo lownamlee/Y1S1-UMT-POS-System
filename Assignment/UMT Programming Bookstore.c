@@ -413,8 +413,10 @@ void report(int sales, int totalQty[])
 
 void menu()
 {
+    // LOCAL DECLARATION & INITIALIZATION
     char menuOpt[MAX_INPUT] = { 0 };
 
+    // LAYOUT
     box(1);
     printf("|                +                 +                  |\n");
     printf("|                |    Menu Lists   |                  |\n");
@@ -426,10 +428,13 @@ void menu()
     printf("| 3. Mobile Programming                               |\n");
     printf("| Input:                                             |");
     cursorMove(45);
+
+    // INPUT
     rewind(stdin);
     gets(menuOpt);
     menuOpt[0] -= 48;
 
+    // VALIDATION
     while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
     {
         error();
@@ -450,11 +455,14 @@ void menu()
         printf("| 3. Mobile Programming                               |\n");
         printf("| Input:                                             |");
         cursorMove(45);
+
+        // INPUT
         rewind(stdin);
         gets(menuOpt);
         menuOpt[0] -= 48;
     }
 
+    // OUTPUT
     switch (menuOpt[0])
     {
     case 1:
@@ -472,6 +480,7 @@ void menu()
 
 void software()
 {
+    // OUTPUT
     printf("\nSoftware Development Programming\n");
     printf("| Type                                   Price(RM) |\n");
     printf("| A > Introduction to Java Programming      69.00 |\n");
@@ -481,6 +490,7 @@ void software()
 
 void web()
 {
+    // OUTPUT
     printf("\nWeb Programming\n");
     printf("| Type                                   Price(RM) |\n");
     printf("| D > Introduction to Web Programming       58.00 |\n");
@@ -490,6 +500,7 @@ void web()
 
 void mobile()
 {
+    // OUTPUT
     printf("\nMobile Programming\n");
     printf("| Type                                   Price(RM) |\n");
     printf("| G > Mobile Design and Programming         73.50 |\n");
