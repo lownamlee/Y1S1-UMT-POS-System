@@ -214,70 +214,6 @@ void mobile()
     printf("| I > Android Programming                   50.00 |\n");
 }
 
-void intro()
-{
-    // LAYOUT
-    box(1);
-    slide("UMT POS SYSTEM");
-    box(1);
-    typing("Welcome to UMT Programming Bookstore\n");
-    printf("|        A simple console POS system.                 |\n");
-    box(1);
-}
-
-void outro()
-{
-    // OUTPUT
-    typing("Shutting down...\n");
-    for (int i = 3; i > 0; i--)
-    {
-        printf("%d\n", i);
-        delay(300);
-    }
-
-    printf("Shut down successfully!!\n");
-    footer();
-
-    // EXIT
-    exit(0);
-}
-
-char quit()
-{
-    // LOCAL DECLARATION & INITIALIZATION
-    char ans[MAX_INPUT] = { 0 };
-
-    // INPUT
-    printf("| Continue to exit? (Y = Yes, N = No):             |");
-    cursorMove(13);
-    rewind(stdin);
-    gets(ans);
-    ans[0] = toupper(ans[0]);
-
-    // VALIDATION
-    while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
-    {
-        error();
-
-        for (int i = 0; i < MAX_INPUT; i++)
-        {
-            ans[i] = 0;
-        }
-
-        printf("| Continue to exit? (Y = Yes, N = No):             |");
-        cursorMove(13);
-        rewind(stdin);
-        gets(ans);
-        ans[0] = toupper(ans[0]);
-    }
-
-    // OUTPUT
-    if (ans[0] == 'Y')
-        printf("Exiting program.\n");
-
-    return ans[0];
-}
-
 void salesOrder()
 {
     // LOCAL DECLARATION & INITIALIZATION
@@ -514,6 +450,70 @@ void report(int sales, int totalQty[])
     printf("|                                   =====   ========= |\n");
     printf("| TOTAL                            %5d    %8.2lf |\n", totalBook, totalPrice);
     footer();
+}
+
+void intro()
+{
+    // LAYOUT
+    box(1);
+    slide("UMT POS SYSTEM");
+    box(1);
+    typing("Welcome to UMT Programming Bookstore\n");
+    printf("|        A simple console POS system.                 |\n");
+    box(1);
+}
+
+void outro()
+{
+    // OUTPUT
+    typing("Shutting down...\n");
+    for (int i = 3; i > 0; i--)
+    {
+        printf("%d\n", i);
+        delay(300);
+    }
+
+    printf("Shut down successfully!!\n");
+    footer();
+
+    // EXIT
+    exit(0);
+}
+
+char quit()
+{
+    // LOCAL DECLARATION & INITIALIZATION
+    char ans[MAX_INPUT] = { 0 };
+
+    // INPUT
+    printf("| Continue to exit? (Y = Yes, N = No):             |");
+    cursorMove(13);
+    rewind(stdin);
+    gets(ans);
+    ans[0] = toupper(ans[0]);
+
+    // VALIDATION
+    while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+    {
+        error();
+
+        for (int i = 0; i < MAX_INPUT; i++)
+        {
+            ans[i] = 0;
+        }
+
+        printf("| Continue to exit? (Y = Yes, N = No):             |");
+        cursorMove(13);
+        rewind(stdin);
+        gets(ans);
+        ans[0] = toupper(ans[0]);
+    }
+
+    // OUTPUT
+    if (ans[0] == 'Y')
+        printf("Exiting program.\n");
+
+    return ans[0];
 }
 
 void error()
