@@ -143,14 +143,17 @@ void outro()
 
 char quit()
 {
+    // LOCAL DECLARATION & INITIALIZATION
     char ans[MAX_INPUT] = { 0 };
 
+    // INPUT
     printf("| Continue to exit? (Y = Yes, N = No):             |");
     cursorMove(13);
     rewind(stdin);
     gets(ans);
     ans[0] = toupper(ans[0]);
 
+    // VALIDATION
     while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
     {
         error();
@@ -167,6 +170,7 @@ char quit()
         ans[0] = toupper(ans[0]);
     }
 
+    // OUTPUT
     if (ans[0] == 'Y')
         printf("Exiting program.\n");
 
