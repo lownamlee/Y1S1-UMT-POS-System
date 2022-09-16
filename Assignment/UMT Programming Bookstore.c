@@ -516,14 +516,6 @@ void outro()
     exit(0);
 }
 
-void error()
-{
-    printf("\a");
-    box(1);
-    printf("| Invalid input, please try it again                  |\n");
-    box(1);
-}
-
 void header()
 {
     box(1);
@@ -589,4 +581,12 @@ void slide(char text[])
     }
 
     printf("\n");
+}
+
+void error()
+{
+    printf("\a");
+    box(1);
+    printf("| Invalid input, please try it again                  |\n");
+    box(1);
 }
