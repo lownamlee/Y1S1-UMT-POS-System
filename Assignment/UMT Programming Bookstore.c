@@ -246,6 +246,7 @@ void salesOrder()
     report(sales, totalQty);
 }
 
+// 1st argument is quantity for each book
 void input(int qty[])
 {
     char index[MAX_INPUT] = { 0 };
@@ -341,6 +342,8 @@ void input(int qty[])
     }
 }
 
+// 1st argument is quantity for each book, 2nd argument is total price for each book, 3rd argument is subtotal
+// 4th argument is discount, 5th argument is total price in a transaction, 6th argument is total books sold
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[])
 {
     for (int i = 0; i < 9; i++)
@@ -362,6 +365,8 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
     *total = *subtotal - *discount;
 }
 
+// 1st argument is quantity for each book, 2nd argument is total price for each book
+// 3rd argument is subtotal, 4th argument is discount, 5th argument is total price in a transaction
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
 {
     printf("\n|                       Receipt                       |\n");
@@ -379,6 +384,7 @@ void output(int qty[], double priceBook[], double* subtotal, double* discount, d
     footer();
 }
 
+// 1st argument is total sales orders, 2nd argument is total books sold
 void report(int sales, int totalQty[])
 {
     int totalBook = 0;
