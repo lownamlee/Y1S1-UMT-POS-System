@@ -72,16 +72,8 @@ int main()
         }
 
         prompt();
-        box(1);
-        printf("|                +               +                    |\n");
-        printf("|                |   Main Menu   |                    |\n");
-        printf("|                +               +                    |\n");
-        box(1);
-        printf("| 1. View Menu                                         |\n");
-        printf("| 2. Sales Order                                       |\n");
-        printf("| 3. Exit                                              |\n");
-        printf("| Choose an option:                                    |");
-        cursorMove(36);
+        printf("|     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
+        cursorMove(5);
         rewind(stdin);
         gets(opt);
         opt[0] -= 48;
@@ -95,8 +87,9 @@ int main()
                 opt[i] = 0;
             }
 
-            printf("| Choose an option:                                    |");
-            cursorMove(36);
+            prompt();
+            printf("|     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
+            cursorMove(5);
             rewind(stdin);
             gets(opt);
             opt[0] -= 48;
