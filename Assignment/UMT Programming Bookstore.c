@@ -183,7 +183,6 @@ void menu()
         mobile();
     }
 
-    footer();
 }
 
 void software()
