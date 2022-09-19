@@ -66,11 +66,6 @@ int main()
     // LOOP
     do
     {
-        for (int i = 0; i < MAX_INPUT; i++)
-        {
-            opt[i] = 0;
-        }
-
         prompt();
         printf("|     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
         cursorMove(5);
