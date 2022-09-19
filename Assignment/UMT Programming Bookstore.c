@@ -170,6 +170,8 @@ void menu()
         menuOpt[0] -= 48;
     }
 
+    box(2);
+
     // OUTPUT
     switch (menuOpt[0])
     {
