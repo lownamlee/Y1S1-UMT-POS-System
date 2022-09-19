@@ -588,11 +588,9 @@ void cursorMove(int move)
 
 void delay(int lateRate)
 {
-    int start = clock();
+    clock_t timeProcessed = clock();
 
-    while (clock() < start + lateRate)
-    {
-    }
+    while (clock() < timeProcessed + lateRate);
 }
 
 void typing(char text[])
