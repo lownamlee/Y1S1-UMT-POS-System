@@ -53,7 +53,7 @@ const double DISCOUNT_RATE_200 = 0.05;
 const double DISCOUNT_RATE_300 = 0.1;
 const double DISCOUNT_RATE_500 = 0.15;
 
-int main(void)
+int main()
 {
     // LOCAL DECLARATION & INITIALIZATION
     char option[MAX_INPUT] = { 0 };
