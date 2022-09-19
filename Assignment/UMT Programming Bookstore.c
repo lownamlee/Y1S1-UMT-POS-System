@@ -61,6 +61,7 @@ int main()
 
     // LAYOUT
     intro();
+    header();
 
     // LOOP
     do
@@ -70,7 +71,6 @@ int main()
             opt[i] = 0;
         }
 
-        header();
         prompt();
         box(1);
         printf("|                +               +                    |\n");
