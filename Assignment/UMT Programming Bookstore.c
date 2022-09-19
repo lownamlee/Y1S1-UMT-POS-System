@@ -66,27 +66,40 @@ int main()
     // LOOP
     do
     {
+        // LAYOUT
         prompt();
         printf("|     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
         cursorMove(5);
+
+        // clear buffer then read the input
         rewind(stdin);
         gets(opt);
+
+        // convert the user input from ASCII value to digit
         opt[0] -= 48;
 
+        // VALIDATION
         while (opt[0] < 1 || opt[0] > 3 || opt[1] != 0)
         {
+            // error message to alert user
             error();
 
+            // reset the value of all index
             for (int i = 0; i < MAX_INPUT; i++)
             {
                 opt[i] = 0;
             }
 
+            // LAYOUT
             prompt();
             printf("|     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
             cursorMove(5);
+
+            // clear buffer then read the input
             rewind(stdin);
             gets(opt);
+
+            // convert the user input from ASCII value to digit
             opt[0] -= 48;
         }
 
@@ -105,12 +118,18 @@ int main()
 
         if (opt[0] == 1 || opt[0] == 2)
         {
+            // LAYOUT
             footer();
+
+            // pause for user to read
             system("pause");
+
+            // LAYOUT
             header();
         }
     } while (ans != 'Y');
 
+    // LAYOUT
     outro();
 }
 
