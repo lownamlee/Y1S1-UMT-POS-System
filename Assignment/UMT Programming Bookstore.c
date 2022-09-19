@@ -1,3 +1,9 @@
+/*
+Author: LOW NAM LEE
+Program: UMT Programming Bookstore
+Date Modified: 22 Sept 2022
+*/
+
 // PREPROCESSORS
 #include <stdio.h>
 #include <stdlib.h>
