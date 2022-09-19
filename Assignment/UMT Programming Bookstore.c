@@ -12,6 +12,24 @@ Date Modified: 22 Sept 2022
 #include <string.h>
 #define MAX_INPUT 1000 // program crashes if user input exceeds this number of digits
 
+// DECORATIONS
+// INTRO & OUTRO
+void intro();
+void outro();
+
+// LAYOUT
+void header();
+void footer();
+void prompt();
+void box(int line);
+void cursorMove(int move);
+
+// ALGORITHMS FOR SPECIAL EFFECTS
+void slide(char text[]);
+void typing(char text[]);
+void delay(int lateRate);
+void error();
+
 // MAIN PROGRAM FUNCTIONS
 // Part 1
 void menu();
@@ -28,21 +46,6 @@ void report(int sales, int totalQty[]);
 
 // Part 3
 char quit();
-
-// LAYOUT AND FEEDBACK
-void error();
-void box(int line);
-void header();
-void footer();
-void prompt();
-
-// INTRO AND SPECIAL EFFECTS
-void intro();
-void outro();
-void delay(int lateRate);
-void typing(char text[]);
-void cursorMove(int move);
-void slide(char text[]);
 
 // GLOBAL DECLARATION (constant)
 const double BOOK_PRICE[9] = { 69.00, 70.00, 55.50, 58.00, 65.00, 89.00, 73.50, 80.00, 50.00 };
