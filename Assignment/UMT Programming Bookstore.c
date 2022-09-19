@@ -56,7 +56,7 @@ const double DISCOUNT_RATE_500 = 0.15;
 int main()
 {
     // LOCAL DECLARATION & INITIALIZATION
-    char option[MAX_INPUT] = { 0 };
+    char opt[MAX_INPUT] = { 0 };
     char ans = 'N';
 
     // LAYOUT
@@ -67,7 +67,7 @@ int main()
     {
         for (int i = 0; i < MAX_INPUT; i++)
         {
-            option[i] = 0;
+            opt[i] = 0;
         }
 
         header();
@@ -83,27 +83,27 @@ int main()
         printf("| Choose an option:                                    |");
         cursorMove(36);
         rewind(stdin);
-        gets(option);
-        option[0] -= 48;
+        gets(opt);
+        opt[0] -= 48;
 
-        while (option[0] < 1 || option[0] > 3 || option[1] != 0)
+        while (opt[0] < 1 || opt[0] > 3 || opt[1] != 0)
         {
             error();
 
             for (int i = 0; i < MAX_INPUT; i++)
             {
-                option[i] = 0;
+                opt[i] = 0;
             }
 
             printf("| Choose an option:                                    |");
             cursorMove(36);
             rewind(stdin);
-            gets(option);
-            option[0] -= 48;
+            gets(opt);
+            opt[0] -= 48;
         }
 
         // OUTPUT
-        switch (option[0])
+        switch (opt[0])
         {
         case 1:
             menu();
@@ -115,7 +115,7 @@ int main()
             ans = quit();
         }
 
-        if (option[0] == 1 || option[0] == 2)
+        if (opt[0] == 1 || opt[0] == 2)
         {
             footer();
             system("pause");
