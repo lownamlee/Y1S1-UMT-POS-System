@@ -131,11 +131,11 @@ void menu()
     printf("|                +                 +                  |\n");
     box(2);
     prompt();
-    printf("| 1. Software Development Programming                 |\n");
-    printf("| 2. Web Programming                                  |\n");
-    printf("| 3. Mobile Programming                               |\n");
-    printf("| Input:                                             |");
-    cursorMove(45);
+    printf("|         1. Software Development Programming         |\n");
+    printf("|         2. Web Programming                          |\n");
+    printf("|         3. Mobile Programming                       |\n");
+    printf("|         Input:                                      |");
+    cursorMove(38);
 
     // INPUT
     rewind(stdin);
@@ -158,11 +158,11 @@ void menu()
         printf("|                +                 +                  |\n");
         box(2);
         prompt();
-        printf("| 1. Software Development Programming                 |\n");
-        printf("| 2. Web Programming                                  |\n");
-        printf("| 3. Mobile Programming                               |\n");
-        printf("| Input:                                             |");
-        cursorMove(45);
+        printf("|         1. Software Development Programming         |\n");
+        printf("|         2. Web Programming                          |\n");
+        printf("|         3. Mobile Programming                       |\n");
+        printf("|         Input:                                      |");
+        cursorMove(38);
 
         // INPUT
         rewind(stdin);
