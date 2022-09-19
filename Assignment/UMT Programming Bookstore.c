@@ -517,9 +517,9 @@ void intro()
     box(1);
     slide("UMT POS SYSTEM");
     box(1);
-    typing("Welcome to UMT Programming Bookstore\n");
-    typing("Kindly choose one of the options below to begin\n");
-    typing("Enjoy\n");
+    typing("Welcome to UMT Programming Bookstore");
+    typing("Kindly choose one of the options below to begin");
+    typing("Enjoy");
     box(1);
 }
 
