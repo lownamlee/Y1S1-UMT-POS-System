@@ -10,9 +10,9 @@ Date Modified: 22 Sept 2022
 #include <ctype.h>
 #include <time.h>
 #include <string.h>
-#define MAX_INPUT 1000 // program crashes if user input exceeds this number of digits
+#define MAX_INPUT 1000 // replace the keyword with 1000 (program crashes if user input exceeds this number of digits)
 
-// DECORATIONS
+// DECORATIONS (ignore them if you see them in the source code ^-^)
 // INTRO & OUTRO
 void intro();
 void outro();
@@ -30,21 +30,21 @@ void typing(char text[]);
 void delay(int lateRate);
 void error();
 
-// MAIN PROGRAM FUNCTIONS
-// Part 1
+// MAIN PROGRAM FUNCTIONS (IMPORTANT)
+// Part1
 void menu();
 void software();
 void web();
 void mobile();
 
-// Part 2
+// Part2
 void salesOrder();
 void input(int qty[]);
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[]);
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total);
 void report(int sales, int totalQty[]);
 
-// Part 3
+// Part3
 char quit();
 
 // GLOBAL DECLARATION (constant)
