@@ -603,6 +603,17 @@ void typing(char text[])
         printf("%c", text[i]);
         delay(lateRate / 30);
     }
+
+    delay(390);
+    printf(" ");
+
+    for (int i = 0; i < strSize; i++)
+    {
+        printf("\b\b ");
+        delay(lateRate / 60);
+    }
+
+    printf("\b");
 }
 
 void slide(char text[])
