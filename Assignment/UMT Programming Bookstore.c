@@ -133,6 +133,7 @@ int main()
     outro();
 }
 
+// PART1
 void menu()
 {
     // LOCAL DECLARATION & INITIALIZATION
@@ -205,6 +206,7 @@ void menu()
 
 }
 
+// OUTPUT
 void software()
 {
     // OUTPUT
@@ -217,6 +219,7 @@ void software()
     printf("| C > Java For Dummies                      55.50 |\n");
 }
 
+// OUTPUT
 void web()
 {
     // OUTPUT
@@ -229,6 +232,7 @@ void web()
     printf("| F > Introduction to PHP                   89.00 |\n");
 }
 
+// OUTPUT
 void mobile()
 {
     // OUTPUT
