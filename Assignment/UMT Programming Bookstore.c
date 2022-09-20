@@ -136,7 +136,7 @@ int main()
 void menu()
 {
     // LOCAL DECLARATION & INITIALIZATION
-    char menuOpt[MAX_INPUT] = { 0 };
+    char opt[MAX_INPUT] = { 0 };
 
     // LAYOUT
     box(2);
@@ -153,17 +153,17 @@ void menu()
 
     // INPUT
     rewind(stdin);
-    gets(menuOpt);
-    menuOpt[0] -= 48;
+    gets(opt);
+    opt[0] -= 48;
 
     // VALIDATION
-    while (menuOpt[0] < 1 || menuOpt[0] > 3 || menuOpt[1] != 0)
+    while (opt[0] < 1 || opt[0] > 3 || opt[1] != 0)
     {
         error();
 
         for (int i = 0; i < MAX_INPUT; i++)
         {
-            menuOpt[i] = 0;
+            opt[i] = 0;
         }
 
         box(2);
@@ -180,14 +180,14 @@ void menu()
 
         // INPUT
         rewind(stdin);
-        gets(menuOpt);
-        menuOpt[0] -= 48;
+        gets(opt);
+        opt[0] -= 48;
     }
 
     box(2);
 
     // OUTPUT
-    switch (menuOpt[0])
+    switch (opt[0])
     {
     case 1:
         software();
