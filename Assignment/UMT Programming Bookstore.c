@@ -665,6 +665,24 @@ void error()
         typing("   My validation is impeccable");
         typing("              Hehe");
         break;
+    case 4:
+        typing("       &6%)'>E`@#*&v,/|s(}-!?");
+        typing("       Error, please try again");
+        break;
+    case 5:
+        typing("Error input detected, shutting down...");
+        typing("                ...");
+        typing("                ...");
+        typing("                ...");
+        typing("           Just kidding");
+        break;
+    case 6:
+        typing("         Once upon a time...");
+        typing("         There was a man...");
+        typing("He kept entering invalid input...");
+        typing("              Then...");
+        typing("            He gone...");
+        typing("           Story ends");
     }
 
     printf("| Invalid input, please try it again                  |\n");
