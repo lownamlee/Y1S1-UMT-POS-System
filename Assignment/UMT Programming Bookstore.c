@@ -514,9 +514,18 @@ char quit()
 void intro()
 {
     // LAYOUT
-    box(1);
-    slide("UMT POS SYSTEM");
-    box(1);
+    slide("   ----------------------------------------------------- ");
+    slide("  |         ....  ....  ...       ...   .........       |");
+    slide("  | _|_    $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       |");
+    slide("  |  |     $$$!: $$$!: $$$!:    $$$!: $$$$$$$$$!        |");
+    slide("  |        $$$!: $$$!: $$$$!:  $$$$!:    $$$!:          |");
+    slide("  |        $$$!: $$$!: $$$$$$$$$$$$!:    $$$!:          |");
+    slide("  |        $$$!: $$$!: $$$!$$$$!$$$!:    $$$!:          |");
+    slide("  |        $$$$$$$$$!: $$$!:$$! $$$!:    $$$!:    _|_   |");
+    slide("  |         $$$$$$$!:  $$$:     $$$!     $$$!      |    |");
+    slide("  |                                                     |");
+    slide("  |            TAR UMT PROGRAMMING BOOKSTORE            |");
+    slide("  |                                                     |");
     typing("Welcome to UMT Programming Bookstore");
     typing("Kindly choose one of the options below to begin");
     typing("Enjoy");
