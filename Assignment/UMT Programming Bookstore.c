@@ -643,8 +643,30 @@ void slide(char text[])
 
 void error()
 {
+    srand(time(NULL));
+    int randNum = rand() % 20 + 1;
+
     printf("\a");
     box(1);
+
+    switch (randNum)
+    {
+    case 1:
+        typing("              Ouch!!");
+        typing("   Don't enter that keyword again");
+        typing("             It hurts");
+        break;
+    case 2:
+        typing("               Hey!");
+        typing("      Don't play the keyboard");
+        break;
+    case 3:
+        typing("You wanna test my validation, huh?");
+        typing("   My validation is impeccable");
+        typing("              Hehe");
+        break;
+    }
+
     printf("| Invalid input, please try it again                  |\n");
     box(1);
 }
