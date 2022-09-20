@@ -291,6 +291,8 @@ void salesOrder()
         output(qty, priceBook, &subtotal, &discount, &total);
 
         // INPUT
+        // LAYOUT
+        printf("+-----------------------------------------------------+\n");
         box(1);
         printf("|           Next order? (Y = Yes, N = No):            |");
         cursorMove(11);
