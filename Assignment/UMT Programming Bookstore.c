@@ -620,10 +620,22 @@ void slide(char text[])
 {
     int strSize = strlen(text);
 
-    for (int i = 0; i < strSize; i++)
+    for (int i = 0; i <= strSize + 1; i++)
     {
-        printf("%c", text[i]);
-        delay(15);
+        for (int j = 0; j <= strSize + 1 - i; j++)
+        {
+            if (j < strSize - i)
+            {
+                printf("%c", text[strSize - 1 - i]);
+                if (text[strSize - 1 - i] != ' ')
+                    delay(1);
+                printf("\b ");
+            }
+            else
+            {
+                printf("%c\r", text[strSize - 1 - i]);
+            }
+        }
     }
 
     printf("\n");
