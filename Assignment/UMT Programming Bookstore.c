@@ -584,10 +584,10 @@ void header()
 
 void footer()
 {
-    box(1);
+    box(2);
     printf("| Time: %s                                      |\n", __TIME__);
     printf("| Date: %s                     UMT POS SYSTEM |\n", __DATE__);
-    box(1);
+    printf("+-----------------------------------------------------+\n");
 }
 
 void prompt()
