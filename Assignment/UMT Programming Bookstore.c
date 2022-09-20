@@ -259,6 +259,7 @@ void salesOrder()
     // LOOP
     do
     {
+        // LOCAL DECLARATION & INITIALIZATION
         // reset each order value whenever the order loops
         int qty[9] = { 0 };
         double priceBook[9] = { 0 };
@@ -266,8 +267,10 @@ void salesOrder()
         double discount = 0;
         double total = 0;
 
+        // add the total sales order by 1 whenever it loops
         sales++;
 
+        // LAYOUT
         header();
         box(1);
         printf("|                  +              +                   |\n");
@@ -291,27 +294,40 @@ void salesOrder()
         box(1);
         printf("|           Next order? (Y = Yes, N = No):            |");
         cursorMove(11);
+
+        // clear the buffer then read the input
         rewind(stdin);
         gets(choice);
+
+        // convert the user input into uppercase
         choice[0] = toupper(choice[0]);
 
+        // VALIDATION
         while (choice[0] != 'Y' && choice[0] != 'N' || choice[1] != 0)
         {
+            // error message to alert user
             error();
 
+            // reset the value of all index
             for (int i = 0; i < MAX_INPUT; i++)
             {
                 choice[i] = 0;
             }
 
+            // LAYOUT
             box(1);
             printf("|           Next order? (Y = Yes, N = No):            |");
             cursorMove(11);
+
+            // clear the buffer then read the input
             rewind(stdin);
             gets(choice);
+
+            // convert the user input into uppercase
             choice[0] = toupper(choice[0]);
         }
 
+        // LAYOUT
         footer();
     } while (choice[0] == 'Y');
 
