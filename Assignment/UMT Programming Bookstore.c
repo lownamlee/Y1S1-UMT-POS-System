@@ -618,7 +618,9 @@ void typing(char text[])
 
 void slide(char text[])
 {
-    for (int i = 0; i < strlen(text); i++)
+    int strSize = strlen(text);
+
+    for (int i = 0; i < strSize; i++)
     {
         printf("%c", text[i]);
         delay(15);
