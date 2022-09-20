@@ -543,9 +543,9 @@ void intro()
     slide("  |                               ___/                  |");
     slide("  |                               \\_______UMT POS SYSTEM|");
     slide("   ----------------------------------------------------- ");
-    typing("Welcome to UMT Programming Bookstore");
-    typing("Kindly choose one of the options below to begin");
-    typing("Enjoy");
+    typing("   Welcome to UMT Programming Bookstore");
+    typing("   Kindly choose one of the options below to begin");
+    typing("   Enjoy");
     box(1);
 }
 
