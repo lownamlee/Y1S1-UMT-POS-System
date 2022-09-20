@@ -245,6 +245,7 @@ void mobile()
     printf("| I > Android Programming                   50.00 |\n");
 }
 
+// PART2
 void salesOrder()
 {
     // LOCAL DECLARATION & INITIALIZATION
