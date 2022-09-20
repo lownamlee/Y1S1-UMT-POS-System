@@ -340,61 +340,90 @@ void salesOrder()
 // 1st argument is quantity for each book
 void input(int qty[])
 {
+    // LOCAL DECLARATION & INITIALIZATION
     char index[MAX_INPUT] = { 0 };
     char qtyInput[MAX_INPUT] = { 0 };
     char ans[MAX_INPUT] = { 0 };
 
+    // LOOP
     while (1)
     {
+        // reset the input buffers before the next book entry
         for (int i = 0; i < MAX_INPUT; i++)
         {
             index[i] = 0;
             qtyInput[i] = 0;
         }
 
+        // LAYOUT
         printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
         cursorMove(12);
+
+        // INPUT
         rewind(stdin);
         gets(index);
+
+        // convert the user input into uppercase
         index[0] = toupper(index[0]);
 
+        // VALIDATION
         while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
         {
+            // error message to alert user
             error();
 
+            // reset the value of all index
             for (int i = 0; i < MAX_INPUT; i++)
             {
                 index[i] = 0;
             }
 
+            // LAYOUT
             printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
             cursorMove(12);
+
+            // clear the buffer then read the input
             rewind(stdin);
             gets(index);
+
+            // convert the user input into uppercase
             index[0] = toupper(index[0]);
         }
 
         if (index[0] == 'X')
         {
+            // LAYOUT
             printf("|    Confirm the order? (Y = Yes, N = No):            |");
             cursorMove(12);
+
+            // INPUT
             rewind(stdin);
             gets(ans);
+
+            // convert the user input into uppercase
             ans[0] = toupper(ans[0]);
 
+            // VALIDATION
             while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
             {
+                // error message to alert user
                 error();
 
+                // reset the value of all index
                 for (int i = 0; i < MAX_INPUT; i++)
                 {
                     ans[i] = 0;
                 }
 
+                // LAYOUT
                 printf("|    Confirm the order? (Y = Yes, N = No):            |");
                 cursorMove(12);
+
+                // clear the buffer then read the input
                 rewind(stdin);
                 gets(ans);
+
+                // convert the user input into uppercase
                 ans[0] = toupper(ans[0]);
             }
 
@@ -404,30 +433,42 @@ void input(int qty[])
                 continue;
         }
 
+        // LAYOUT
         printf("| Quantity                            :             |");
         cursorMove(12);
+
+        // INPUT
         rewind(stdin);
         gets(qtyInput);
 
+        // VALIDATION
         for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
         {
             while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
             {
+                // error message to alert user
                 error();
 
+                // reset the value of all index
                 for (int j = 0; j < MAX_INPUT; j++)
                 {
                     qtyInput[j] = 0;
                 }
 
+                // LAYOUT
                 printf("| Quantity                            :             |");
                 cursorMove(12);
+
+                // clear the buffer then read the input
                 rewind(stdin);
                 gets(qtyInput);
+
+                // reset loop counter to validate from first index again
                 i = 0;
             }
         }
 
+        // PROCESS
         index[0] -= 65;
         qty[index[0]] += atoi(qtyInput);
     }
