@@ -145,9 +145,11 @@ void menu()
     printf("|                +                 +                  |\n");
     box(2);
     prompt();
+    box(1);
     printf("|         1. Software Development Programming         |\n");
     printf("|         2. Web Programming                          |\n");
     printf("|         3. Mobile Programming                       |\n");
+    box(1);
     printf("|         Input:                                      |");
     cursorMove(38);
 
@@ -172,9 +174,11 @@ void menu()
         printf("|                +                 +                  |\n");
         box(2);
         prompt();
+        box(1);
         printf("|         1. Software Development Programming         |\n");
         printf("|         2. Web Programming                          |\n");
         printf("|         3. Mobile Programming                       |\n");
+        box(1);
         printf("|         Input:                                      |");
         cursorMove(38);
 
