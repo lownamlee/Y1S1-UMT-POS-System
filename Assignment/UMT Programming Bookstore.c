@@ -786,10 +786,15 @@ void typing(char text[])
     printf("\b");
 }
 
+// 1st argument is latency rate in milliseconds
 void delay(int lateRate)
 {
+    // LOCAL DECLARATION
+    // declare and initialize the variable with the current processed time
     clock_t timeProcessed = clock();
 
+    // PROCESS
+    // pause until the processed time reaches the requested delay
     while (clock() < timeProcessed + lateRate);
 }
 
