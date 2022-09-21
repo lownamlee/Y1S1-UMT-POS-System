@@ -652,7 +652,11 @@ void intro()
 
 void outro()
 {
-    // OUTPUT
+    // LAYOUT
+    box(1);
+    printf("|                                                     |");
+    cursorMove(40);
+
     printf("Shutting down");
     delay(1000);
 
