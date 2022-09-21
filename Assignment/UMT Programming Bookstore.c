@@ -647,7 +647,6 @@ void intro()
     typing("   Welcome to UMT Programming Bookstore");
     typing("   Kindly choose one of the options below to begin");
     typing("   Enjoy");
-    box(1);
 }
 
 void outro()
