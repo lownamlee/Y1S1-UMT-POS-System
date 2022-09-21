@@ -686,6 +686,7 @@ void header()
 
 void footer()
 {
+    // these are standard predefined macro to display date & time
     box(2);
     printf("| Time: %s                                      |\n", __TIME__);
     printf("| Date: %s                     UMT POS SYSTEM |\n", __DATE__);
@@ -709,6 +710,7 @@ void box(int line)
 
 void cursorMove(int move)
 {
+    // move the cursor to the designated place
     for (int i = 0; i < move; i++)
     {
         printf("\b");
