@@ -569,6 +569,7 @@ void report(int sales, int totalQty[])
     footer();
 }
 
+// Part3
 char quit()
 {
     // LOCAL DECLARATION & INITIALIZATION
