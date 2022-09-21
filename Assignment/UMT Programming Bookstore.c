@@ -653,7 +653,18 @@ void intro()
 void outro()
 {
     // OUTPUT
-    typing("Shutting down...\n");
+    printf("Shutting down");
+    delay(1000);
+
+    printf(".");
+    delay(1000);
+
+    printf(".");
+    delay(1000);
+
+    printf(".\n");
+    delay(1000);
+
     for (int i = 3; i > 0; i--)
     {
         printf("%d\n", i);
