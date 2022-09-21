@@ -716,28 +716,39 @@ void cursorMove(int move)
 }
 
 // SPECIAL EFFECTS
+// 1st argument is string or array to be displayed
 void slide(char text[])
 {
+    // LOCAL DECLARATION & INITIALIZATION
     int strSize = strlen(text);
 
+    // OUTPUT
+    // i controls the text index, j controls the cursor spacing
     for (int i = 0; i <= strSize + 1; i++)
     {
         for (int j = 0; j <= strSize + 1 - i; j++)
         {
+            // keep moving the current character until it reaches its final position
             if (j < strSize - i)
             {
                 printf("%c", text[strSize - 1 - i]);
+
+                // skip delay for blank spaces so wide lines move faster
                 if (text[strSize - 1 - i] != ' ')
                     delay(1);
+
+                // erase the temporary character before the next cursor step
                 printf("\b ");
             }
             else
             {
+                // print the character in place and return to the row start
                 printf("%c\r", text[strSize - 1 - i]);
             }
         }
     }
 
+    // avoid conflict between different rows of sliding text
     printf("\n");
 }
 
