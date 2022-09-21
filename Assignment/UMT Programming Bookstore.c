@@ -752,26 +752,35 @@ void slide(char text[])
     printf("\n");
 }
 
+// 1st argument is string to be displayed
 void typing(char text[])
 {
+    // LOCAL DECLARATION & INITIALIZATION
     int strSize = strlen(text);
     int lateRate = strSize * 15;
 
+    // OUTPUT (TYPING)
     for (int i = 0; i < strSize; i++)
     {
+        // display each character one after another
         printf("%c", text[i]);
         delay(lateRate / 30);
     }
 
+    // pause before deleting the displayed text
     delay(390);
+
+    // OUTPUT (OVERLAPPING)
     printf(" ");
 
     for (int i = 0; i < strSize; i++)
     {
+        // move left and overlap the last character with blank space
         printf("\b\b ");
         delay(lateRate / 60);
     }
 
+    // move cursor back to the original place
     printf("\b");
 }
 
