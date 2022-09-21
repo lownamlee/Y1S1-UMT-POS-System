@@ -610,6 +610,8 @@ char quit()
     return ans[0];
 }
 
+// DECORATIONS (ignore all the functions below)
+// INTRO & OUTRO
 void intro()
 {
     // LAYOUT
@@ -665,6 +667,7 @@ void outro()
     exit(0);
 }
 
+// LAYOUT
 void header()
 {
     printf("+-----------------------------------------------------+\n");
@@ -712,6 +715,7 @@ void cursorMove(int move)
     }
 }
 
+// SPECIAL EFFECTS
 void delay(int lateRate)
 {
     clock_t timeProcessed = clock();
