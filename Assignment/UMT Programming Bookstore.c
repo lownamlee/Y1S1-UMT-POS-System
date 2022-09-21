@@ -509,27 +509,35 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
 // 3rd argument is subtotal, 4th argument is discount, 5th argument is total price in a transaction
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
 {
+    // OUTPUT
     printf("\n|                       Receipt                       |\n");
+
     for (int i = 0; i < 9; i++)
     {
+        // display only the books included in this order
         if (priceBook[i] != 0)
             printf("| Book %c : %5d @ RM%5.2lf = RM%8.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
     }
 
+    // display payment summary
     printf("|                                          ========== |\n");
     printf("| Subtotal                             = RM%8.2lf |\n", *subtotal);
     printf("| Discount                             = RM%8.2lf |\n", *discount);
     printf("| Total to pay                         = RM%8.2lf |\n", *total);
     printf("|             THANK YOU, HAVE A NICE DAY!!            |\n");
+
+    // LAYOUT
     footer();
 }
 
 // 1st argument is total sales orders, 2nd argument is total books sold
 void report(int sales, int totalQty[])
 {
+    // LOCAL DECLARATION & INITIALIZATION
     int totalBook = 0;
     double totalPrice = 0;
 
+    // LAYOUT
     header();
     box(1);
     printf("|          DAILY SALES ORDER SUMMARY REPORT           |\n");
@@ -541,13 +549,23 @@ void report(int sales, int totalQty[])
 
     for (int i = 0; i < 9; i++)
     {
+        // add all the number of books that have been sold
         totalBook += totalQty[i];
+
+        // calculate the total price for all the purchase
         totalPrice += totalQty[i] * BOOK_PRICE[i];
+
+        // display the quantity sold and total price for each book type
         printf("|    %c |                           %5d |  %8.2lf |\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
     }
 
+    // LAYOUT
     printf("|                                   =====   ========= |\n");
+
+    // display total quantity of all types of books sold and total sales price
     printf("| TOTAL                            %5d    %8.2lf |\n", totalBook, totalPrice);
+
+    // LAYOUT
     footer();
 }
 
