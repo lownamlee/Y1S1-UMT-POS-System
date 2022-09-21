@@ -615,6 +615,7 @@ char quit()
 void intro()
 {
     // LAYOUT
+    // pass each row directly to the slide effect
     slide("   ----------------------------------------------------- ");
     slide("  |         ....  ....  ...       ...   .........       |");
     slide("  | _|_    $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       |");
