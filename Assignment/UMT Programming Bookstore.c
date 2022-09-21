@@ -576,6 +576,7 @@ char quit()
     char ans[MAX_INPUT] = { 0 };
 
     // INPUT
+    box(2);
     printf("| Continue to exit? (Y = Yes, N = No):             |");
     cursorMove(13);
     rewind(stdin);
@@ -592,6 +593,7 @@ char quit()
             ans[i] = 0;
         }
 
+        box(1);
         printf("| Continue to exit? (Y = Yes, N = No):             |");
         cursorMove(13);
         rewind(stdin);
