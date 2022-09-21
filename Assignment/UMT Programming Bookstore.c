@@ -604,6 +604,8 @@ char quit()
     // OUTPUT
     if (ans[0] == 'Y')
         printf("Exiting program.\n");
+    else
+        footer();
 
     return ans[0];
 }
