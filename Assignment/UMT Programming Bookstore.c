@@ -800,12 +800,18 @@ void delay(int lateRate)
 
 void error()
 {
+    // to make sure the number is random
     srand(time(NULL));
+
+    // declare and initialize a variable with random number
     int randNum = rand() % 20 + 1;
 
+    // alert the user that the entered input is invalid
     printf("\a");
     box(1);
 
+    // OUTPUT
+    // there is a slim chance to display the following sentences
     switch (randNum)
     {
     case 1:
