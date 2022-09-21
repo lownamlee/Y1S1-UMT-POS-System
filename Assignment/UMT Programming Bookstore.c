@@ -669,10 +669,18 @@ void outro()
     printf(".\n");
     delay(1000);
 
-    for (int i = 3; i > 0; i--)
+    // LAYOUT
+    for (int i = 0; i < 4; i++)
     {
-        printf("%d\n", i);
-        delay(300);
+        box(1);
+        printf("|                                                     |");
+        cursorMove(40);
+
+        if (i == 3)
+            break;
+
+        printf("            %d\n", 3 - i);
+        delay(1000);
     }
 
     printf("Shut down successfully!!\n");
