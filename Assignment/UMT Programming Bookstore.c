@@ -716,11 +716,29 @@ void cursorMove(int move)
 }
 
 // SPECIAL EFFECTS
-void delay(int lateRate)
+void slide(char text[])
 {
-    clock_t timeProcessed = clock();
+    int strSize = strlen(text);
 
-    while (clock() < timeProcessed + lateRate);
+    for (int i = 0; i <= strSize + 1; i++)
+    {
+        for (int j = 0; j <= strSize + 1 - i; j++)
+        {
+            if (j < strSize - i)
+            {
+                printf("%c", text[strSize - 1 - i]);
+                if (text[strSize - 1 - i] != ' ')
+                    delay(1);
+                printf("\b ");
+            }
+            else
+            {
+                printf("%c\r", text[strSize - 1 - i]);
+            }
+        }
+    }
+
+    printf("\n");
 }
 
 void typing(char text[])
@@ -746,29 +764,11 @@ void typing(char text[])
     printf("\b");
 }
 
-void slide(char text[])
+void delay(int lateRate)
 {
-    int strSize = strlen(text);
+    clock_t timeProcessed = clock();
 
-    for (int i = 0; i <= strSize + 1; i++)
-    {
-        for (int j = 0; j <= strSize + 1 - i; j++)
-        {
-            if (j < strSize - i)
-            {
-                printf("%c", text[strSize - 1 - i]);
-                if (text[strSize - 1 - i] != ' ')
-                    delay(1);
-                printf("\b ");
-            }
-            else
-            {
-                printf("%c\r", text[strSize - 1 - i]);
-            }
-        }
-    }
-
-    printf("\n");
+    while (clock() < timeProcessed + lateRate);
 }
 
 void error()
