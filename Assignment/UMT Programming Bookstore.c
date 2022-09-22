@@ -214,7 +214,7 @@ void menu()
 // OUTPUT
 void software()
 {
-    // OUTPUT
+    // LAYOUT
     printf("| Type                                   Price(RM) |\n");
     box(1);
     printf("| A > Introduction to Java Programming      69.00 |\n");
@@ -227,7 +227,7 @@ void software()
 // OUTPUT
 void web()
 {
-    // OUTPUT
+    // LAYOUT
     printf("| Type                                   Price(RM) |\n");
     box(1);
     printf("| D > Introduction to Web Programming       58.00 |\n");
@@ -240,7 +240,7 @@ void web()
 // OUTPUT
 void mobile()
 {
-    // OUTPUT
+    // LAYOUT
     printf("| Type                                   Price(RM) |\n");
     box(1);
     printf("| G > Mobile Design and Programming         73.50 |\n");
