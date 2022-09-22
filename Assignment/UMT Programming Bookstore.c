@@ -361,7 +361,7 @@ void input(int qty[])
         }
 
         // LAYOUT
-        printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
+        printf("|    A, B, C, D, E, F, G, H, I (X - Exit):            |");
         cursorMove(12);
 
         // INPUT
@@ -384,7 +384,7 @@ void input(int qty[])
             }
 
             // LAYOUT
-            printf("| A, B, C, D, E, F, G, H, I (X - Exit):            |");
+            printf("|    A, B, C, D, E, F, G, H, I (X - Exit):            |");
             cursorMove(12);
 
             // clear the buffer then read the input
@@ -439,7 +439,7 @@ void input(int qty[])
         }
 
         // LAYOUT
-        printf("| Quantity                            :             |");
+        printf("|    Quantity                            :            |");
         cursorMove(12);
 
         // INPUT
@@ -461,7 +461,7 @@ void input(int qty[])
                 }
 
                 // LAYOUT
-                printf("| Quantity                            :             |");
+                printf("|    Quantity                            :            |");
                 cursorMove(12);
 
                 // clear the buffer then read the input
