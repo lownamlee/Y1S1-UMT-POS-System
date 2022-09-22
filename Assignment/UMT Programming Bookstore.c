@@ -384,6 +384,7 @@ void input(int qty[])
             }
 
             // LAYOUT
+            box(1);
             printf("|    A, B, C, D, E, F, G, H, I (X - Exit):            |");
             cursorMove(12);
 
@@ -421,6 +422,7 @@ void input(int qty[])
                 }
 
                 // LAYOUT
+                box(1);
                 printf("|    Confirm the order? (Y = Yes, N = No):            |");
                 cursorMove(12);
 
@@ -461,6 +463,7 @@ void input(int qty[])
                 }
 
                 // LAYOUT
+                box(1);
                 printf("|    Quantity                            :            |");
                 cursorMove(12);
 
