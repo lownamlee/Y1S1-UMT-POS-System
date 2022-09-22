@@ -215,39 +215,39 @@ void menu()
 void software()
 {
     // LAYOUT
-    printf("| Type                                   Price(RM) |\n");
+    printf("|   Type                                   Price(RM)  |\n");
     box(1);
-    printf("| A > Introduction to Java Programming      69.00 |\n");
+    printf("|   A > Introduction to Java Programming      69.00   |\n");
     box(1);
-    printf("| B > Learn to Program with C (2015)        70.00 |\n");
+    printf("|   B > Learn to Program with C (2015)        70.00   |\n");
     box(1);
-    printf("| C > Java For Dummies                      55.50 |\n");
+    printf("|   C > Java For Dummies                      55.50   |\n");
 }
 
 // OUTPUT
 void web()
 {
     // LAYOUT
-    printf("| Type                                   Price(RM) |\n");
+    printf("|   Type                                   Price(RM)  |\n");
     box(1);
-    printf("| D > Introduction to Web Programming       58.00 |\n");
+    printf("|   D > Introduction to Web Programming       58.00   |\n");
     box(1);
-    printf("| E > Introduction HTML & CSS               65.00 |\n");
+    printf("|   E > Introduction HTML & CSS               65.00   |\n");
     box(1);
-    printf("| F > Introduction to PHP                   89.00 |\n");
+    printf("|   F > Introduction to PHP                   89.00   |\n");
 }
 
 // OUTPUT
 void mobile()
 {
     // LAYOUT
-    printf("| Type                                   Price(RM) |\n");
+    printf("|   Type                                   Price(RM)  |\n");
     box(1);
-    printf("| G > Mobile Design and Programming         73.50 |\n");
+    printf("|   G > Mobile Design and Programming         73.50   |\n");
     box(1);
-    printf("| H > Start Building Mobile App             80.00 |\n");
+    printf("|   H > Start Building Mobile App             80.00   |\n");
     box(1);
-    printf("| I > Android Programming                   50.00 |\n");
+    printf("|   I > Android Programming                   50.00   |\n");
 }
 
 // PART2
