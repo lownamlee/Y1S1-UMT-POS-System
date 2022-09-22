@@ -594,8 +594,8 @@ char quit()
     typing("  I'm Ramly Burger");
     typing("The creator of this program");
     typing("Thank you for choosing us");
-    printf("\n  ©§     Continue to exit? (Y = Yes, N = No):            ©§");
-    cursorMove(12);
+    printf("\n  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
+    cursorMove(10);
 
     // INPUT
     rewind(stdin);
@@ -613,8 +613,8 @@ char quit()
         }
 
         box(1);
-        printf("  ©§     Continue to exit? (Y = Yes, N = No):            ©§");
-        cursorMove(12);
+        printf("  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
+        cursorMove(10);
         rewind(stdin);
         gets(ans);
         ans[0] = toupper(ans[0]);
@@ -622,11 +622,9 @@ char quit()
 
     // OUTPUT
     if (ans[0] == 'Y')
-        printf("Exiting program.\n");
+        return ans[0];
     else
         footer();
-
-    return ans[0];
 }
 
 // DECORATIONS (ignore all the functions below)
