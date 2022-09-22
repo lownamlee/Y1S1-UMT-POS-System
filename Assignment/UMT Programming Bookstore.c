@@ -169,11 +169,6 @@ void menu()
             opt[i] = 0;
         }
 
-        box(2);
-        printf("|                +                 +                  |\n");
-        printf("|                |    Menu Lists   |                  |\n");
-        printf("|                +                 +                  |\n");
-        box(2);
         prompt();
         box(1);
         printf("|         1. Software Development Programming         |\n");
