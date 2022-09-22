@@ -68,7 +68,7 @@ int main()
     {
         // LAYOUT
         prompt();
-        printf("  |     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
+        printf("  ©§     (1 = View Menu, 2 = Sales Order, 3 = Exit):     ©§");
         cursorMove(5);
 
         // clear buffer then read the input
@@ -92,7 +92,7 @@ int main()
 
             // LAYOUT
             prompt();
-            printf("  |     (1 = View Menu, 2 = Sales Order, 3 = Exit):     |");
+            printf("  ©§     (1 = View Menu, 2 = Sales Order, 3 = Exit):     ©§");
             cursorMove(5);
 
             // clear buffer then read the input
@@ -142,17 +142,17 @@ void menu()
 
     // LAYOUT
     box(2);
-    printf("  |                +                 +                  |\n");
-    printf("  |                |    Menu Lists   |                  |\n");
-    printf("  |                +                 +                  |\n");
+    printf("  ©§                +                 +                  ©§\n");
+    printf("  ©§                |    Menu Lists   |                  ©§\n");
+    printf("  ©§                +                 +                  ©§\n");
     box(2);
     prompt();
     box(1);
-    printf("  |         1. Software Development Programming         |\n");
-    printf("  |         2. Web Programming                          |\n");
-    printf("  |         3. Mobile Programming                       |\n");
+    printf("  ©§         1. Software Development Programming         ©§\n");
+    printf("  ©§         2. Web Programming                          ©§\n");
+    printf("  ©§         3. Mobile Programming                       ©§\n");
     box(1);
-    printf("  |         Input:                                      |");
+    printf("  ©§         Input:                                      ©§");
     cursorMove(38);
 
     // INPUT
@@ -177,11 +177,11 @@ void menu()
         // LAYOUT
         prompt();
         box(1);
-        printf("  |         1. Software Development Programming         |\n");
-        printf("  |         2. Web Programming                          |\n");
-        printf("  |         3. Mobile Programming                       |\n");
+        printf("  ©§         1. Software Development Programming         ©§\n");
+        printf("  ©§         2. Web Programming                          ©§\n");
+        printf("  ©§         3. Mobile Programming                       ©§\n");
         box(1);
-        printf("  |         Input:                                      |");
+        printf("  ©§         Input:                                      ©§");
 
         // move the cursor to the input
         cursorMove(38);
@@ -216,39 +216,39 @@ void menu()
 void software()
 {
     // LAYOUT
-    printf("  |   Type                                   Price(RM)  |\n");
+    printf("  ©§   Type                                   Price(RM)  ©§\n");
     box(1);
-    printf("  |   A > Introduction to Java Programming      69.00   |\n");
+    printf("  ©§   A > Introduction to Java Programming      69.00   ©§\n");
     box(1);
-    printf("  |   B > Learn to Program with C (2015)        70.00   |\n");
+    printf("  ©§   B > Learn to Program with C (2015)        70.00   ©§\n");
     box(1);
-    printf("  |   C > Java For Dummies                      55.50   |\n");
+    printf("  ©§   C > Java For Dummies                      55.50   ©§\n");
 }
 
 // OUTPUT
 void web()
 {
     // LAYOUT
-    printf("  |   Type                                   Price(RM)  |\n");
+    printf("  ©§   Type                                   Price(RM)  ©§\n");
     box(1);
-    printf("  |   D > Introduction to Web Programming       58.00   |\n");
+    printf("  ©§   D > Introduction to Web Programming       58.00   ©§\n");
     box(1);
-    printf("  |   E > Introduction HTML & CSS               65.00   |\n");
+    printf("  ©§   E > Introduction HTML & CSS               65.00   ©§\n");
     box(1);
-    printf("  |   F > Introduction to PHP                   89.00   |\n");
+    printf("  ©§   F > Introduction to PHP                   89.00   ©§\n");
 }
 
 // OUTPUT
 void mobile()
 {
     // LAYOUT
-    printf("  |   Type                                   Price(RM)  |\n");
+    printf("  ©§   Type                                   Price(RM)  ©§\n");
     box(1);
-    printf("  |   G > Mobile Design and Programming         73.50   |\n");
+    printf("  ©§   G > Mobile Design and Programming         73.50   ©§\n");
     box(1);
-    printf("  |   H > Start Building Mobile App             80.00   |\n");
+    printf("  ©§   H > Start Building Mobile App             80.00   ©§\n");
     box(1);
-    printf("  |   I > Android Programming                   50.00   |\n");
+    printf("  ©§   I > Android Programming                   50.00   ©§\n");
 }
 
 // PART2
@@ -279,13 +279,13 @@ void salesOrder()
         // LAYOUT
         header();
         box(1);
-        printf("  |                  +              +                   |\n");
-        printf("  |                  |  Sales Order |                   |\n");
-        printf("  |                  +              +                   |\n");
+        printf("  ©§                  +              +                   ©§\n");
+        printf("  ©§                  |  Sales Order |                   ©§\n");
+        printf("  ©§                  +              +                   ©§\n");
         box(1);
-        printf("  |                  Sales Order No: %d                  |\n", sales);
+        printf("  ©§                  Sales Order No: %d                  ©§\n", sales);
         box(1);
-        printf("  |                                             Input   |\n");
+        printf("  ©§                                             Input   ©§\n");
         box(1);
         // INPUT
         input(qty);
@@ -300,7 +300,7 @@ void salesOrder()
         // LAYOUT
         printf("  +-----------------------------------------------------+\n");
         box(1);
-        printf("  |           Next order? (Y = Yes, N = No):            |");
+        printf("  ©§           Next order? (Y = Yes, N = No):            ©§");
         cursorMove(11);
 
         // clear the buffer then read the input
@@ -324,7 +324,7 @@ void salesOrder()
 
             // LAYOUT
             box(1);
-            printf("  |           Next order? (Y = Yes, N = No):            |");
+            printf("  ©§           Next order? (Y = Yes, N = No):            ©§");
             cursorMove(11);
 
             // clear the buffer then read the input
@@ -362,7 +362,7 @@ void input(int qty[])
         }
 
         // LAYOUT
-        printf("  |    A, B, C, D, E, F, G, H, I (X - Exit):            |");
+        printf("  ©§    A, B, C, D, E, F, G, H, I (X - Exit):            ©§");
         cursorMove(12);
 
         // INPUT
@@ -386,7 +386,7 @@ void input(int qty[])
 
             // LAYOUT
             box(1);
-            printf("  |    A, B, C, D, E, F, G, H, I (X - Exit):            |");
+            printf("  ©§    A, B, C, D, E, F, G, H, I (X - Exit):            ©§");
             cursorMove(12);
 
             // clear the buffer then read the input
@@ -401,7 +401,7 @@ void input(int qty[])
         if (index[0] == 'X')
         {
             // LAYOUT
-            printf("  |    Confirm the order? (Y = Yes, N = No):            |");
+            printf("  ©§    Confirm the order? (Y = Yes, N = No):            ©§");
             cursorMove(12);
 
             // INPUT
@@ -425,7 +425,7 @@ void input(int qty[])
 
                 // LAYOUT
                 box(1);
-                printf("  |    Confirm the order? (Y = Yes, N = No):            |");
+                printf("  ©§    Confirm the order? (Y = Yes, N = No):            ©§");
                 cursorMove(12);
 
                 // clear the buffer then read the input
@@ -444,7 +444,7 @@ void input(int qty[])
         }
 
         // LAYOUT
-        printf("  |    Quantity                            :            |");
+        printf("  ©§    Quantity                            :            ©§");
         cursorMove(12);
 
         // INPUT
@@ -467,7 +467,7 @@ void input(int qty[])
 
                 // LAYOUT
                 box(1);
-                printf("  |    Quantity                            :            |");
+                printf("  ©§    Quantity                            :            ©§");
                 cursorMove(12);
 
                 // clear the buffer then read the input
@@ -521,21 +521,21 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
 {
     // OUTPUT
-    printf("\n  |                       Receipt                       |\n");
+    printf("\n  ©§                       Receipt                       ©§\n");
 
     for (int i = 0; i < 9; i++)
     {
         // display only the books included in this order
         if (priceBook[i] != 0)
-            printf("  | Book %c : %5d @ RM%5.2lf = RM%8.2lf |\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+            printf("  ©§ Book %c : %5d @ RM%5.2lf = RM%8.2lf ©§\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
     }
 
     // display payment summary
-    printf("  |                                          ========== |\n");
-    printf("  | Subtotal                             = RM%8.2lf |\n", *subtotal);
-    printf("  | Discount                             = RM%8.2lf |\n", *discount);
-    printf("  | Total to pay                         = RM%8.2lf |\n", *total);
-    printf("  |             THANK YOU, HAVE A NICE DAY!!            |\n");
+    printf("  ©§                                          ========== ©§\n");
+    printf("  ©§ Subtotal                             = RM%8.2lf ©§\n", *subtotal);
+    printf("  ©§ Discount                             = RM%8.2lf ©§\n", *discount);
+    printf("  ©§ Total to pay                         = RM%8.2lf ©§\n", *total);
+    printf("  ©§             THANK YOU, HAVE A NICE DAY!!            ©§\n");
 
     // LAYOUT
     footer();
@@ -551,12 +551,12 @@ void report(int sales, int totalQty[])
     // LAYOUT
     header();
     box(1);
-    printf("  |          DAILY SALES ORDER SUMMARY REPORT           |\n");
+    printf("  ©§          DAILY SALES ORDER SUMMARY REPORT           ©§\n");
     box(1);
-    printf("  | Total Number of Sales Orders = %d                   |\n", sales);
+    printf("  ©§ Total Number of Sales Orders = %d                   ©§\n", sales);
     box(1);
-    printf("  | Book |             Quantity Sold Sales |    Amount |\n");
-    printf("  | ---- | ------------------------------- | --------- |\n");
+    printf("  ©§ Book |             Quantity Sold Sales |    Amount ©§\n");
+    printf("  ©§ ---- | ------------------------------- | --------- ©§\n");
 
     for (int i = 0; i < 9; i++)
     {
@@ -567,14 +567,14 @@ void report(int sales, int totalQty[])
         totalPrice += totalQty[i] * BOOK_PRICE[i];
 
         // display the quantity sold and total price for each book type
-        printf("  |    %c |                           %5d |  %8.2lf |\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
+        printf("  ©§    %c |                           %5d |  %8.2lf ©§\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
     }
 
     // LAYOUT
-    printf("  |                                   =====   ========= |\n");
+    printf("  ©§                                   =====   ========= ©§\n");
 
     // display total quantity of all types of books sold and total sales price
-    printf("  | TOTAL                            %5d    %8.2lf |\n", totalBook, totalPrice);
+    printf("  ©§ TOTAL                            %5d    %8.2lf ©§\n", totalBook, totalPrice);
 
     // LAYOUT
     footer();
@@ -588,7 +588,7 @@ char quit()
 
     // INPUT
     box(2);
-    printf("  | Continue to exit? (Y = Yes, N = No):             |");
+    printf("  ©§ Continue to exit? (Y = Yes, N = No):             ©§");
     cursorMove(13);
     rewind(stdin);
     gets(ans);
@@ -605,7 +605,7 @@ char quit()
         }
 
         box(1);
-        printf("  | Continue to exit? (Y = Yes, N = No):             |");
+        printf("  ©§ Continue to exit? (Y = Yes, N = No):             ©§");
         cursorMove(13);
         rewind(stdin);
         gets(ans);
@@ -628,33 +628,33 @@ void intro()
     // LAYOUT
     // pass each row directly to the slide effect
     slide("   ----------------------------------------------------- ");
-    slide("  |         ....  ....  ...       ...   .........       |");
-    slide("  | _|_    $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       |");
-    slide("  |  |     $$$!: $$$!: $$$!:    $$$!: $$$$$$$$$!        |");
-    slide("  |        $$$!: $$$!: $$$$!:  $$$$!:    $$$!:          |");
-    slide("  |        $$$!: $$$!: $$$$$$$$$$$$!:    $$$!:          |");
-    slide("  |        $$$!: $$$!: $$$!$$$$!$$$!:    $$$!:          |");
-    slide("  |        $$$$$$$$$!: $$$!:$$! $$$!:    $$$!:    _|_   |");
-    slide("  |         $$$$$$$!:  $$$:     $$$!     $$$!      |    |");
-    slide("  |                                                     |");
-    slide("  |            TAR UMT PROGRAMMING BOOKSTORE            |");
-    slide("  |                                                     |");
-    slide("  |           ____________________                      |");
-    slide("  |          / / / / / / / / / / /|                     |");
-    slide("  |   _|_   / / / / / / / / / / / |            __       |");
-    slide("  |    |   / / / / / / / / / / /  |           / /       |");
-    slide("  |       / / / / / / / / / / /   |          /-/\\       |");
-    slide("  |      |-|-|-|-|-|-|-|-|-|-|  / |         / ///       |");
-    slide("  |      | | | | | | | | | | | // |        / ///        |");
-    slide("  |      | | | | | | | | | | | /  |       / ///         |");
-    slide("  |      | | | | | | | | | | |    |      / /_/          |");
-    slide("  |      |A|B|C|D|E|F|G|H|I|X|    |     / /        _|_  |");
-    slide("  |      | | | | | | | | | | |  //     / /          |   |");
-    slide("  |      | | | | | | | | | | | //     / /               |");
-    slide("  |      | | | | | | | | | | | /     /_/                |");
-    slide("  |      |_|_|_|_|_|_|_|_|_|_|/      |/                 |");
-    slide("  |                               ___/                  |");
-    slide("  |                               \\_______UMT POS SYSTEM|");
+    slide("  |         ....  ....  ...       ...   .........       ©§");
+    slide("  | _|_    $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       ©§");
+    slide("  |  |     $$$!: $$$!: $$$!:    $$$!: $$$$$$$$$!        ©§");
+    slide("  |        $$$!: $$$!: $$$$!:  $$$$!:    $$$!:          ©§");
+    slide("  |        $$$!: $$$!: $$$$$$$$$$$$!:    $$$!:          ©§");
+    slide("  |        $$$!: $$$!: $$$!$$$$!$$$!:    $$$!:          ©§");
+    slide("  |        $$$$$$$$$!: $$$!:$$! $$$!:    $$$!:    _|_   ©§");
+    slide("  |         $$$$$$$!:  $$$:     $$$!     $$$!      |    ©§");
+    slide("  |                                                     ©§");
+    slide("  |            TAR UMT PROGRAMMING BOOKSTORE            ©§");
+    slide("  |                                                     ©§");
+    slide("  |           ____________________                      ©§");
+    slide("  |          / / / / / / / / / / /|                     ©§");
+    slide("  |   _|_   / / / / / / / / / / / |            __       ©§");
+    slide("  |    |   / / / / / / / / / / /  |           / /       ©§");
+    slide("  |       / / / / / / / / / / /   |          /-/\\       ©§");
+    slide("  |      |-|-|-|-|-|-|-|-|-|-|  / |         / ///       ©§");
+    slide("  |      | | | | | | | | | | | // |        / ///        ©§");
+    slide("  |      | | | | | | | | | | | /  |       / ///         ©§");
+    slide("  |      | | | | | | | | | | |    |      / /_/          ©§");
+    slide("  |      |A|B|C|D|E|F|G|H|I|X|    |     / /        _|_  ©§");
+    slide("  |      | | | | | | | | | | |  //     / /          |   ©§");
+    slide("  |      | | | | | | | | | | | //     / /               ©§");
+    slide("  |      | | | | | | | | | | | /     /_/                ©§");
+    slide("  |      |_|_|_|_|_|_|_|_|_|_|/      |/                 ©§");
+    slide("  |                               ___/                  ©§");
+    slide("  |                               \\_______UMT POS SYSTEM©§");
     slide("   ----------------------------------------------------- ");
     typing("   Welcome to UMT Programming Bookstore");
     typing("   Kindly choose one of the options below to begin");
@@ -665,7 +665,7 @@ void outro()
 {
     // LAYOUT
     box(1);
-    printf("  |                                                     |");
+    printf("  ©§                                                     ©§");
     cursorMove(40);
 
     printf("Shutting down");
@@ -684,7 +684,7 @@ void outro()
     for (int i = 0; i < 4; i++)
     {
         box(1);
-        printf("  |                                                     |");
+        printf("  ©§                                                     ©§");
         cursorMove(40);
 
         if (i == 3)
@@ -706,15 +706,15 @@ void header()
 {
     printf("  +-----------------------------------------------------+\n");
     box(1);
-    printf("  |         ....  ....  ...       ...   .........       |\n");
-    printf("  |        $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       |\n");
-    printf("  |        $$$!: $$$!: $$$!:    $$$!: $$$$$$$$$!        |\n");
-    printf("  |        $$$!: $$$!: $$$$!:  $$$$!:    $$$!:          |\n");
-    printf("  |        $$$!: $$$!: $$$$$$$$$$$$!:    $$$!:          |\n");
-    printf("  |        $$$!: $$$!: $$$!$$$$!$$$!:    $$$!:          |\n");
-    printf("  |        $$$$$$$$$!: $$$!:$$! $$$!:    $$$!:          |\n");
-    printf("  |         $$$$$$$!:  $$$:     $$$!     $$$!           |\n");
-    printf("  |                                                     |\n");
+    printf("  ©§         ....  ....  ...       ...   .........       ©§\n");
+    printf("  ©§        $$$!: $$$!: $$!:      $$!: $$$$$$$$$!:       ©§\n");
+    printf("  ©§        $$$!: $$$!: $$$!:    $$$!: $$$$$$$$$!        ©§\n");
+    printf("  ©§        $$$!: $$$!: $$$$!:  $$$$!:    $$$!:          ©§\n");
+    printf("  ©§        $$$!: $$$!: $$$$$$$$$$$$!:    $$$!:          ©§\n");
+    printf("  ©§        $$$!: $$$!: $$$!$$$$!$$$!:    $$$!:          ©§\n");
+    printf("  ©§        $$$$$$$$$!: $$$!:$$! $$$!:    $$$!:          ©§\n");
+    printf("  ©§         $$$$$$$!:  $$$:     $$$!     $$$!           ©§\n");
+    printf("  ©§                                                     ©§\n");
     box(1);
 }
 
@@ -722,15 +722,15 @@ void footer()
 {
     // these are standard predefined macro to display date & time
     box(2);
-    printf("  | Time: %s                                      |\n", __TIME__);
-    printf("  | Date: %s                     UMT POS SYSTEM |\n", __DATE__);
+    printf("  ©§ Time: %s                                      ©§\n", __TIME__);
+    printf("  ©§ Date: %s                     UMT POS SYSTEM ©§\n", __DATE__);
     printf("  +-----------------------------------------------------+\n");
 }
 
 void prompt()
 {
     box(1);
-    printf("  |                  Select an option                   |\n");
+    printf("  ©§                  Select an option                   ©§\n");
     box(1);
 }
 
@@ -738,7 +738,7 @@ void box(int line)
 {
     for (int i = 0; i < line; i++)
     {
-        printf("  |                                                     |\n");
+        printf("  ©§                                                     ©§\n");
     }
 }
 
@@ -882,6 +882,6 @@ void error()
         typing("           Story ends");
     }
 
-    printf("  | Invalid input, please try it again                  |\n");
+    printf("  ©§ Invalid input, please try it again                  ©§\n");
     box(1);
 }
