@@ -157,18 +157,23 @@ void menu()
     // INPUT
     rewind(stdin);
     gets(opt);
+
+    // convert the user input from ASCII value to digit
     opt[0] -= 48;
 
     // VALIDATION
     while (opt[0] < 1 || opt[0] > 3 || opt[1] != 0)
     {
+        // display error message to alert the user
         error();
 
+        // reset the value of all index
         for (int i = 0; i < MAX_INPUT; i++)
         {
             opt[i] = 0;
         }
 
+        // LAYOUT
         prompt();
         box(1);
         printf("|         1. Software Development Programming         |\n");
@@ -176,14 +181,19 @@ void menu()
         printf("|         3. Mobile Programming                       |\n");
         box(1);
         printf("|         Input:                                      |");
+
+        // move the cursor to the input
         cursorMove(38);
 
-        // INPUT
+        // clear the buffer then read input
         rewind(stdin);
         gets(opt);
+
+        // convert the user input from ASCII value to digit
         opt[0] -= 48;
     }
 
+    // LAYOUT
     box(2);
 
     // OUTPUT
