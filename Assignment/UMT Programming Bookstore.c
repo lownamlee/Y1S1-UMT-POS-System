@@ -586,10 +586,18 @@ char quit()
     // LOCAL DECLARATION & INITIALIZATION
     char ans[MAX_INPUT] = { 0 };
 
+    // LAYOUT
+    box(1);
+    printf("  ©§                                                     ©§");
+    cursorMove(40);
+
+    typing("  I'm Ramly Burger");
+    typing("The creator of this program");
+    typing("Thank you for choosing us");
+    printf("\n  ©§     Continue to exit? (Y = Yes, N = No):            ©§");
+    cursorMove(12);
+
     // INPUT
-    box(2);
-    printf("  ©§ Continue to exit? (Y = Yes, N = No):             ©§");
-    cursorMove(13);
     rewind(stdin);
     gets(ans);
     ans[0] = toupper(ans[0]);
@@ -605,8 +613,8 @@ char quit()
         }
 
         box(1);
-        printf("  ©§ Continue to exit? (Y = Yes, N = No):             ©§");
-        cursorMove(13);
+        printf("  ©§     Continue to exit? (Y = Yes, N = No):            ©§");
+        cursorMove(12);
         rewind(stdin);
         gets(ans);
         ans[0] = toupper(ans[0]);
