@@ -266,7 +266,7 @@ void salesOrder()
     {
         // LOCAL DECLARATION & INITIALIZATION
         // reset each order value whenever the order loops
-        int qty[9] = { 0 };
+        int    qty[9] = { 0 };
         double priceBook[9] = { 0 };
         double subtotal = 0;
         double discount = 0;
@@ -282,7 +282,7 @@ void salesOrder()
         printf("|                  |  Sales Order |                   |\n");
         printf("|                  +              +                   |\n");
         box(1);
-        printf("|                  Sales Order No: %d                 |\n", sales);
+        printf("|                  Sales Order No: %d                  |\n", sales);
         box(1);
         printf("|                                             Input   |\n");
         box(1);
