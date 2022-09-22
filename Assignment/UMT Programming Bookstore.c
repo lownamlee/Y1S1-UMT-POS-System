@@ -841,8 +841,9 @@ void error()
     int randNum = rand() % 20 + 1;
 
     // alert the user that the entered input is invalid
-    printf("\a");
-    box(1);
+    printf("  ©§                                                     ©§\n");
+    printf("\a  ©§                                                     ©§");
+    cursorMove(45);
 
     // OUTPUT
     // there is a slim chance to display the following sentences
