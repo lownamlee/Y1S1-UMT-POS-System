@@ -396,6 +396,7 @@ void input(int qty[])
             index[0] = toupper(index[0]);
         }
 
+        // SENTINEL VALUE
         if (index[0] == 'X')
         {
             // LAYOUT
@@ -434,6 +435,7 @@ void input(int qty[])
                 ans[0] = toupper(ans[0]);
             }
 
+            // OUTPUT
             if (ans[0] == 'Y')
                 break;
             else
