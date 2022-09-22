@@ -130,6 +130,7 @@ int main()
     } while (ans != 'Y');
 
     // LAYOUT
+    // display before the program ends
     outro();
 }
 
