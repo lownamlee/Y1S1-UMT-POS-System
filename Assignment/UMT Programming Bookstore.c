@@ -517,28 +517,30 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
 // 3rd argument is subtotal, 4th argument is discount, 5th argument is total price in a transaction
 void output(int qty[], double priceBook[], double* subtotal, double* discount, double* total)
 {
-	// OUTPUT
-	printf("\n  ©§                       Receipt                       ©§\n");
+	// LAYOUT
+	box(1);
 
+	// OUTPUT
 	for (int i = 0; i < 9; i++)
 	{
-		// display only the books included in this order
+		// display the quantity and the total price for each book if the total price for it is not 0
 		if (priceBook[i] != 0)
-			printf("  ©§ Book %c : %5d @ RM%5.2lf = RM%8.2lf ©§\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
+			printf("  ©§   Book %c : %5d @ RM%5.2lf             = RM%8.2lf ©§\n", i + 65, qty[i], BOOK_PRICE[i], priceBook[i]);
 	}
 
-	// display payment summary
+	// display subtotal, discount, and total for this purchase
 	printf("  ©§                                          ========== ©§\n");
-	printf("  ©§ Subtotal                             = RM%8.2lf ©§\n", *subtotal);
-	printf("  ©§ Discount                             = RM%8.2lf ©§\n", *discount);
-	printf("  ©§ Total to pay                         = RM%8.2lf ©§\n", *total);
-	printf("  ©§             THANK YOU, HAVE A NICE DAY!!            ©§\n");
+	printf("  ©§   Subtotal                             = RM%8.2lf ©§\n", *subtotal);
+	printf("  ©§   Discounts                            = RM%8.2lf ©§\n", *discount);
+	printf("  ©§   Total to pay                         = RM%8.2lf ©§\n", *total);
 
 	// LAYOUT
+	box(1);
+	printf("  ©§             THANK YOU, HAVE A NICE DAY!!            ©§\n");
 	footer();
 }
 
-// 1st argument is total sales orders, 2nd argument is total books sold
+// 1st argument is total sales orders, 2nd argument is total book have been sold
 void report(int sales, int totalQty[])
 {
 	// LOCAL DECLARATION & INITIALIZATION
@@ -550,11 +552,17 @@ void report(int sales, int totalQty[])
 	box(1);
 	printf("  ©§          DAILY SALES ORDER SUMMARY REPORT           ©§\n");
 	box(1);
-	printf("  ©§ Total Number of Sales Orders = %d                   ©§\n", sales);
-	box(1);
-	printf("  ©§ Book |             Quantity Sold Sales |    Amount ©§\n");
-	printf("  ©§ ---- | ------------------------------- | --------- ©§\n");
 
+	// OUTPUT
+	// display total sales orders
+	printf("  ©§  Total Number of Sales Orders = %d                   ©§\n", sales);
+
+	// LAYOUT
+	box(1);
+	printf("  ©§  Book |             Quantity Sold Sales |    Amount ©§\n");
+	printf("  ©§ ----- | ------------------------------- | --------- ©§\n");
+
+	// OUTPUT
 	for (int i = 0; i < 9; i++)
 	{
 		// add all the number of books that have been sold
@@ -563,18 +571,15 @@ void report(int sales, int totalQty[])
 		// calculate the total price for all the purchase
 		totalPrice += totalQty[i] * BOOK_PRICE[i];
 
-		// display the quantity sold and total price for each book type
-		printf("  ©§    %c |                           %5d |  %8.2lf ©§\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
+		// display the quantity sold, and the total price for each type of book
+		printf("  ©§     %c |                           %5d |  %8.2lf ©§\n", i + 65, totalQty[i], totalQty[i] * BOOK_PRICE[i]);
 	}
 
 	// LAYOUT
 	printf("  ©§                                   =====   ========= ©§\n");
 
-	// display total quantity of all types of books sold and total sales price
-	printf("  ©§ TOTAL                            %5d    %8.2lf ©§\n", totalBook, totalPrice);
-
-	// LAYOUT
-	footer();
+	// display total quantity of all types of books sold, and the total sales price
+	printf("  ©§  TOTAL                            %5d    %8.2lf ©§\n", totalBook, totalPrice);
 }
 
 // Part3
