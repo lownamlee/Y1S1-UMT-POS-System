@@ -482,24 +482,24 @@ void input(int qty[])
 	}
 }
 
-// 1st argument is quantity for each book, 2nd argument is total price for each book, 3rd argument is subtotal
-// 4th argument is discount, 5th argument is total price in a transaction, 6th argument is total books sold
+// 1st argument is quantity for each book, 2nd argument is total price for each book, 3rd argument is subtotal, 
+// 4th argument is discount, 5th argument is total price in a transaction, 6th argument is total books have been sold
 void process(int qty[], double priceBook[], double* subtotal, double* discount, double* total, int totalQty[])
 {
 	// PROCESS
 	for (int i = 0; i < 9; i++)
 	{
-		// calculate total price of each book type
-		priceBook[i] = qty[i] * BOOK_PRICE[i];
+		// calculate and assign the total price for each book
+		*(priceBook + i) = *(qty + i) * BOOK_PRICE[i];
 
-		// add each book total into subtotal
-		*subtotal += priceBook[i];
+		// then add all the total price to the subtotal,
+		*subtotal += *(priceBook + i);
 
-		// add this order quantity into the daily total quantity
-		totalQty[i] += qty[i];
+		// finally add all the book sold amount for report
+		*(totalQty + i) += *(qty + i);
 	}
 
-	// calculate discount based on subtotal amount
+	// calculate discount according to the price range of subtotal
 	if (*subtotal > 500)
 		*discount = *subtotal * DISCOUNT_RATE_500;
 	else if (*subtotal > 300)
@@ -509,7 +509,7 @@ void process(int qty[], double priceBook[], double* subtotal, double* discount, 
 	else
 		*discount = 0.0;
 
-	// calculate final price after discount
+	// calculate the total price in the transaction
 	*total = *subtotal - *discount;
 }
 
