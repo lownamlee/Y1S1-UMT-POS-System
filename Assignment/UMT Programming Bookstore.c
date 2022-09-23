@@ -589,41 +589,56 @@ char quit()
 	char ans[MAX_INPUT] = { 0 };
 
 	// LAYOUT
-	box(1);
+	printf("  ©§                                                     ©§\n");
 	printf("  ©§                                                     ©§");
+
+	// move the cursor to the middle
 	cursorMove(40);
 
+	// LAYOUT
 	typing("  I'm Ramly Burger");
 	typing("The creator of this program");
 	typing("Thank you for choosing us");
 	printf("\n  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
+
+
+	// move the cursor to the input
 	cursorMove(10);
 
 	// INPUT
 	rewind(stdin);
 	gets(ans);
+
+	// convert into uppercase
 	ans[0] = toupper(ans[0]);
 
-	// VALIDATION
+	// VALIDATIOn
 	while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
 	{
+		// error message to alert user
 		error();
 
+		// LAYOUT
 		box(1);
 		printf("  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
+
+		// move the cursor to the input
 		cursorMove(10);
 
+		// reset the value of all index
 		for (int i = 0; i < MAX_INPUT; i++)
 		{
 			ans[i] = 0;
 		}
 
+		// clear the buffer then read the input
 		rewind(stdin);
 		gets(ans);
+
+		// convert into uppercase
 		ans[0] = toupper(ans[0]);
 	}
 
-	// OUTPUT
 	if (ans[0] == 'Y')
 		return ans[0];
 	else
