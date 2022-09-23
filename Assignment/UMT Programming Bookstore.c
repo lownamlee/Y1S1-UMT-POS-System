@@ -60,6 +60,7 @@ int main()
 	char ans = 'N';
 
 	// LAYOUT
+	// display the intro once the program starts
 	intro();
 	header();
 
@@ -127,6 +128,7 @@ int main()
 			// LAYOUT
 			header();
 		}
+
 	} while (ans != 'Y');
 
 	// LAYOUT
@@ -172,7 +174,7 @@ void menu()
 		prompt();
 		box(1);
 		printf("  ©§         1. Software Development Programming         ©§\n");
-		printf("  ©§         2. Web Programming                          ©§\n");
+		printf("  ©§         2. Website Programming                      ©§\n");
 		printf("  ©§         3. Mobile Programming                       ©§\n");
 		box(1);
 		printf("  ©§         Input:                                      ©§");
@@ -209,7 +211,6 @@ void menu()
 	case 3:
 		mobile();
 	}
-
 }
 
 // OUTPUT
