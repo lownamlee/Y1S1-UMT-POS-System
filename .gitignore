@@ -1,0 +1,25 @@
+﻿# Visual Studio local state
+.vs/
+*.user
+
+# Build outputs
+x64/
+Assignment/x64/
+Debug/
+Release/
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.idb
+*.log
+*.tlog
+*.recipe
+
+# Source MP4 captures converted to animated WebP for README display
+Assets/*.mp4
+
+# Local screenshots not used by the README
+Assets/*.png
+!Assets/assignment-exe.png
+!Assets/run-cmd.png
