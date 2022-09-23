@@ -265,8 +265,7 @@ void salesOrder()
 	// LOOP
 	do
 	{
-		// LOCAL DECLARATION & INITIALIZATION
-		// reset each order value whenever the order loops
+		// LOCAL DECLARATION & INITIALIZATION (reset all these value to 0s whenever it loops)
 		int    qty[9] = { 0 };
 		double priceBook[9] = { 0 };
 		double subtotal = 0;
@@ -287,6 +286,7 @@ void salesOrder()
 		box(1);
 		printf("  ©§                                             Input   ©§\n");
 		box(1);
+
 		// INPUT
 		input(qty);
 
@@ -313,7 +313,7 @@ void salesOrder()
 		// VALIDATION
 		while (choice[0] != 'Y' && choice[0] != 'N' || choice[1] != 0)
 		{
-			// error message to alert user
+			// display error message to alert the user
 			error();
 
 			// LAYOUT
@@ -337,6 +337,7 @@ void salesOrder()
 
 		// LAYOUT
 		footer();
+
 	} while (choice[0] == 'Y');
 
 	// OUTPUT
@@ -351,16 +352,8 @@ void input(int qty[])
 	char qtyInput[MAX_INPUT] = { 0 };
 	char ans[MAX_INPUT] = { 0 };
 
-	// LOOP
 	while (1)
 	{
-		// reset the input buffers before the next book entry
-		for (int i = 0; i < MAX_INPUT; i++)
-		{
-			index[i] = 0;
-			qtyInput[i] = 0;
-		}
-
 		// LAYOUT
 		printf("  ©§    A, B, C, D, E, F, G, H, I (X - Exit):            ©§");
 		cursorMove(12);
@@ -369,13 +362,13 @@ void input(int qty[])
 		rewind(stdin);
 		gets(index);
 
-		// convert the user input into uppercase
+		// convert the input into uppercase alphabet
 		index[0] = toupper(index[0]);
 
 		// VALIDATION
 		while (index[0] != 'A' && index[0] != 'B' && index[0] != 'C' && index[0] != 'D' && index[0] != 'E' && index[0] != 'F' && index[0] != 'G' && index[0] != 'H' && index[0] != 'I' && index[0] != 'X' || index[1] != 0)
 		{
-			// error message to alert user
+			// display error message to alert the user
 			error();
 
 			// LAYOUT
@@ -393,7 +386,7 @@ void input(int qty[])
 			rewind(stdin);
 			gets(index);
 
-			// convert the user input into uppercase
+			// convert the input into uppercase alphabet
 			index[0] = toupper(index[0]);
 		}
 
@@ -408,13 +401,13 @@ void input(int qty[])
 			rewind(stdin);
 			gets(ans);
 
-			// convert the user input into uppercase
+			// convert the input into upper alphabet
 			ans[0] = toupper(ans[0]);
 
 			// VALIDATION
-			while (ans[0] != 'Y' && ans[0] != 'N' || ans[1] != 0)
+			while (ans[0] != 'Y' && ans[0] != 'N' || index[1] != 0)
 			{
-				// error message to alert user
+				// alert the user with error message
 				error();
 
 				// LAYOUT
@@ -432,7 +425,7 @@ void input(int qty[])
 				rewind(stdin);
 				gets(ans);
 
-				// convert the user input into uppercase
+				// convert the input into upper alphabet
 				ans[0] = toupper(ans[0]);
 			}
 
@@ -451,12 +444,13 @@ void input(int qty[])
 		rewind(stdin);
 		gets(qtyInput);
 
-		// VALIDATION
+		// VALIDATION (because '\n' is not digit, so it should scan until where the user have entered instead of scanning the whole array)
 		for (int i = 0; i < strlen(qtyInput) || !(isdigit(qtyInput[0])); i++)
 		{
+			// cannot be non-digit or less than 0
 			while (!(isdigit(qtyInput[i])) || qtyInput[0] < 0)
 			{
-				// error message to alert user
+				// display error message to alert user
 				error();
 
 				// LAYOUT
@@ -474,14 +468,17 @@ void input(int qty[])
 				rewind(stdin);
 				gets(qtyInput);
 
-				// reset loop counter to validate from first index again
+				// reset loop
 				i = 0;
 			}
 		}
 
-		// PROCESS
+		// convert input into digit to be used as the index of array
 		index[0] -= 65;
-		qty[index[0]] += atoi(qtyInput);
+
+		// convert the string from user input into integer
+		// then add the value to its corresponding index of the array to store the value
+		*(qty + index[0]) += atoi(qtyInput);
 	}
 }
 
