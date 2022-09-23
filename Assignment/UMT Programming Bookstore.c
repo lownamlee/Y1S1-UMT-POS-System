@@ -84,16 +84,16 @@ int main()
 			// error message to alert user
 			error();
 
+			// LAYOUT
+			prompt();
+			printf("  ©§     (1 = View Menu, 2 = Sales Order, 3 = Exit):     ©§");
+			cursorMove(5);
+
 			// reset the value of all index
 			for (int i = 0; i < MAX_INPUT; i++)
 			{
 				opt[i] = 0;
 			}
-
-			// LAYOUT
-			prompt();
-			printf("  ©§     (1 = View Menu, 2 = Sales Order, 3 = Exit):     ©§");
-			cursorMove(5);
 
 			// clear buffer then read the input
 			rewind(stdin);
@@ -168,12 +168,6 @@ void menu()
 		// display error message to alert the user
 		error();
 
-		// reset the value of all index
-		for (int i = 0; i < MAX_INPUT; i++)
-		{
-			opt[i] = 0;
-		}
-
 		// LAYOUT
 		prompt();
 		box(1);
@@ -185,6 +179,12 @@ void menu()
 
 		// move the cursor to the input
 		cursorMove(38);
+
+		// reset the value of all index
+		for (int i = 0; i < MAX_INPUT; i++)
+		{
+			opt[i] = 0;
+		}
 
 		// clear the buffer then read input
 		rewind(stdin);
@@ -316,16 +316,16 @@ void salesOrder()
 			// error message to alert user
 			error();
 
+			// LAYOUT
+			box(1);
+			printf("  ©§           Next order? (Y = Yes, N = No):            ©§");
+			cursorMove(11);
+
 			// reset the value of all index
 			for (int i = 0; i < MAX_INPUT; i++)
 			{
 				choice[i] = 0;
 			}
-
-			// LAYOUT
-			box(1);
-			printf("  ©§           Next order? (Y = Yes, N = No):            ©§");
-			cursorMove(11);
 
 			// clear the buffer then read the input
 			rewind(stdin);
@@ -378,16 +378,16 @@ void input(int qty[])
 			// error message to alert user
 			error();
 
+			// LAYOUT
+			box(1);
+			printf("  ©§    A, B, C, D, E, F, G, H, I (X - Exit):            ©§");
+			cursorMove(12);
+
 			// reset the value of all index
 			for (int i = 0; i < MAX_INPUT; i++)
 			{
 				index[i] = 0;
 			}
-
-			// LAYOUT
-			box(1);
-			printf("  ©§    A, B, C, D, E, F, G, H, I (X - Exit):            ©§");
-			cursorMove(12);
 
 			// clear the buffer then read the input
 			rewind(stdin);
@@ -417,16 +417,16 @@ void input(int qty[])
 				// error message to alert user
 				error();
 
+				// LAYOUT
+				box(1);
+				printf("  ©§    Confirm the order? (Y = Yes, N = No):            ©§");
+				cursorMove(12);
+
 				// reset the value of all index
 				for (int i = 0; i < MAX_INPUT; i++)
 				{
 					ans[i] = 0;
 				}
-
-				// LAYOUT
-				box(1);
-				printf("  ©§    Confirm the order? (Y = Yes, N = No):            ©§");
-				cursorMove(12);
 
 				// clear the buffer then read the input
 				rewind(stdin);
@@ -459,16 +459,16 @@ void input(int qty[])
 				// error message to alert user
 				error();
 
+				// LAYOUT
+				box(1);
+				printf("  ©§    Quantity                            :            ©§");
+				cursorMove(12);
+
 				// reset the value of all index
 				for (int j = 0; j < MAX_INPUT; j++)
 				{
 					qtyInput[j] = 0;
 				}
-
-				// LAYOUT
-				box(1);
-				printf("  ©§    Quantity                            :            ©§");
-				cursorMove(12);
 
 				// clear the buffer then read the input
 				rewind(stdin);
@@ -607,14 +607,15 @@ char quit()
 	{
 		error();
 
+		box(1);
+		printf("  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
+		cursorMove(10);
+
 		for (int i = 0; i < MAX_INPUT; i++)
 		{
 			ans[i] = 0;
 		}
 
-		box(1);
-		printf("  ©§     Continue to exit? (Y-Yes/N-No) :                ©§");
-		cursorMove(10);
 		rewind(stdin);
 		gets(ans);
 		ans[0] = toupper(ans[0]);
