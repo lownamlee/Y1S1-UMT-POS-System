@@ -779,35 +779,35 @@ void cursorMove(int move)
 void slide(char text[])
 {
 	// LOCAL DECLARATION & INITIALIZATION
-	int strSize = strlen(text);
+	int strSize = strlen(text); // declare then initialize it with the string length of 'text'
 
 	// OUTPUT
-	// i controls the text index, j controls the cursor spacing
+	// 'i' determines the index of 'text' to be displayed, whereas 'j' determines the number of space to move
 	for (int i = 0; i <= strSize + 1; i++)
 	{
 		for (int j = 0; j <= strSize + 1 - i; j++)
 		{
-			// keep moving the current character until it reaches its final position
+			// if the index of 'text' haven't reached the end of the 'text'
 			if (j < strSize - i)
 			{
+				// display the last index of the 'text'
 				printf("%c", text[strSize - 1 - i]);
 
-				// skip delay for blank spaces so wide lines move faster
+				// do not delay if the index of 'text' to be displayed is blank space (to make it run faster)
 				if (text[strSize - 1 - i] != ' ')
 					delay(1);
 
-				// erase the temporary character before the next cursor step
+				// move cursor to the left of the displayed index then overlap it
 				printf("\b ");
 			}
 			else
 			{
-				// print the character in place and return to the row start
+				// display the last index of the 'text' then move cursor to the original place
 				printf("%c\r", text[strSize - 1 - i]);
 			}
 		}
 	}
-
-	// avoid conflict between different rows of sliding text
+	// to avoid conflict between different rows of 'text' to be displayed
 	printf("\n");
 }
 
@@ -815,27 +815,34 @@ void slide(char text[])
 void typing(char text[])
 {
 	// LOCAL DECLARATION & INITIALIZATION
-	int strSize = strlen(text);
-	int lateRate = strSize * 15;
+	int strSize = strlen(text); // declare then initialize it with the string length of 'text'
+	int lateRate = strSize * 15; // declare then initialize it to determine the latency rate (miliseconds)
 
 	// OUTPUT (TYPING)
+	// 'i' determines the index of 'text' to be displayed
 	for (int i = 0; i < strSize; i++)
 	{
-		// display each character one after another
-		printf("%c", text[i]);
+		// delay to make it looks like moving
 		delay(lateRate / 30);
+
+		// display each index of 'text' one after another until the end of it
+		printf("%c", text[i]);
 	}
 
-	// pause before deleting the displayed text
+	// pause before overlapping the displayed 'text'
 	delay(390);
 
 	// OUTPUT (OVERLAPPING)
+	// move cursor to right of the last index of the displayed 'text'
 	printf(" ");
 
+	// 'i' determines the last index of 'text' to be overlapped
 	for (int i = 0; i < strSize; i++)
 	{
-		// move left and overlap the last character with blank space
+		// move cursor to the left of the last index, then overlap it with blank space
 		printf("\b\b ");
+
+		// delay to make it looks like deleting
 		delay(lateRate / 60);
 	}
 
@@ -843,7 +850,7 @@ void typing(char text[])
 	printf("\b");
 }
 
-// 1st argument is latency rate in milliseconds
+// 1st argument is latency rate (miliseconds)
 void delay(int lateRate)
 {
 	// LOCAL DECLARATION
@@ -851,7 +858,7 @@ void delay(int lateRate)
 	clock_t timeProcessed = clock();
 
 	// PROCESS
-	// pause until the processed time reaches the requested delay
+	// pause until the current processed time is not less than the sum of previously recorded processed time and the 'lateRate' time
 	while (clock() < timeProcessed + lateRate);
 }
 
@@ -863,13 +870,15 @@ void error()
 	// declare and initialize a variable with random number
 	int randNum = rand() % 20 + 1;
 
-	// alert the user that the entered input is invalid
+	// '\a' to alert the user that the input has entered is invalid
 	printf("  ©§                                                     ©§\n");
 	printf("\a  ©§                                                     ©§");
+
+	// move the cursor to the middle
 	cursorMove(45);
 
 	// OUTPUT
-	// there is a slim chance to display the following sentences
+	// there are a slim chance to display the following sentence
 	switch (randNum)
 	{
 	case 1:
@@ -905,7 +914,5 @@ void error()
 		typing("            He gone...");
 		typing("           Story ends");
 	}
-
-	printf("  ©§ Invalid input, please try it again                  ©§\n");
-	box(1);
+	printf("Invalid input, please try it again\n");
 }
