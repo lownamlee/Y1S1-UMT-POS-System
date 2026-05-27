@@ -1,36 +1,220 @@
-# UMT Programming Bookstore
+# Y1S1 UMT POS System
 
-This is a simple C console assignment for a programming bookstore POS system.
+<p align="center">
+  <img src="Assets/intro.webp" alt="UMT POS System intro screen" width="560" />
+</p>
 
-The program lets the user view book categories, enter book codes and quantities,
-calculate payment, print receipt output, and check the daily sales report.
+<p align="center">
+  <img src="https://img.shields.io/badge/language-C-blue" alt="C" />
+  <img src="https://img.shields.io/badge/IDE-Visual%20Studio-5C2D91" alt="Visual Studio" />
+  <img src="https://img.shields.io/badge/platform-Windows-0078D4" alt="Windows" />
+  <img src="https://img.shields.io/badge/type-Console%20Application-lightgrey" alt="Console application" />
+  <img src="https://img.shields.io/badge/course-AACS1074-orange" alt="AACS1074" />
+</p>
 
-## Main Functions
+This is a repost of a simple system that I have done for **AACS1074 Programming Concepts & Design I** during my **Year 1 Semester 1** coursework in the **2022/2023 academic year**.
 
-- View software, web, and mobile programming books
-- Take sales orders from book codes and quantities
-- Calculate subtotal, discount, and final payment
-- Print receipt-style output
-- Show a daily sales report
-- Validate wrong menu choices and sales input
+It is a small C console-based POS system for a fictional **UMT Programming Bookstore**. The project lets a user choose programming books, enter quantities, calculate totals and discounts, print receipt-style output, and review a daily sales report.
 
-## Build And Run
+## What It Does
 
-Open `Assignment.sln` in Visual Studio and build the project.
+- Displays a bookstore menu with programming book categories.
+- Accepts book codes and quantities for each order.
+- Calculates item charges, subtotal, discount, and final payment.
+- Shows receipt-style sales output for each transaction.
+- Generates a daily summary report for all sales entered during the session.
+- Handles invalid menu choices and incorrect sales input.
 
-After building, run the generated `Assignment.exe` from the debug output folder.
-If the console border text does not display correctly, change the command prompt
-code page first:
+## Requirements
+
+- Windows
+- Microsoft Visual Studio with C/C++ project support
+- Command Prompt for running the generated executable
+
+## How To Install / Build
+
+The executable is not stored in the repository. Build the Visual Studio project first, then run the generated `Assignment.exe`.
+
+### 1. Open the Visual Studio solution
+
+Open `Assignment.sln` in Microsoft Visual Studio. This loads the original coursework project and source file.
+
+<p align="center">
+  <img src="Assets/How-to-build-project.webp" alt="Opening and building the Visual Studio project" width="900" />
+</p>
+
+### 2. Build the project
+
+Select `Debug | x64`, then build the solution. After a successful build, Visual Studio creates the executable in the output folder, usually `x64\Debug`.
+
+The screenshot below shows the generated `Assignment.exe` file in the build output folder. This is the program that will be launched after the project is built.
+
+<p align="center">
+  <img src="Assets/assignment-exe.png" alt="Hovering over the generated Assignment.exe file" width="760" />
+</p>
+
+## How To Run
+
+### Option 1: Run with `run.cmd`
+
+The easiest way to start the program is to double-click or run `run.cmd` from the repository root.
+
+The screenshot below shows the helper command file. It changes the console code page to `936`, moves to the build output folder, and starts `Assignment.exe` for you.
+
+<p align="center">
+  <img src="Assets/run-cmd.png" alt="Hovering over the run.cmd helper file" width="760" />
+</p>
+
+### Option 2: Run manually from Command Prompt
+
+If you prefer to run the program manually, open Command Prompt in the build output folder, usually `x64\Debug`, then run:
 
 ```cmd
 chcp 936
+Assignment.exe
 ```
 
-There is also a `run.cmd` helper script that can start the built program after
-the executable exists.
+`chcp 936` changes the console code page so the program output displays correctly before the executable starts.
 
-## Project Files
+## How To Use
 
-- `Assignment/UMT Programming Bookstore.c` - main source code
-- `Assignment.sln` - Visual Studio solution
-- `run.cmd` - helper script for running the built program
+### 1. Start a sales operation
+
+After the program starts, use the menu to begin a sales operation. The system displays the available books, accepts item codes, and lets the user enter quantities for each selected book.
+
+<p align="center">
+  <img src="Assets/operation.webp" alt="Sales operation workflow in the console program" width="420" />
+</p>
+
+<br>
+
+### 2. Enter valid choices and quantities
+
+The program checks menu choices and sales entries before continuing. If the user enters an invalid option, the system displays a warning and asks for the input again instead of immediately processing incorrect data.
+
+<p align="center">
+  <img src="Assets/validation.webp" alt="Input validation messages in the console program" width="420" />
+</p>
+
+<br>
+
+### 3. Review the daily sales report
+
+At the end of the workflow, the report screen summarizes the sales captured during the session. It helps the user review quantities sold and gross sales amounts by book.
+
+<p align="center">
+  <img src="Assets/report.webp" alt="Daily sales report generated by the POS system" width="420" />
+</p>
+
+<br>
+
+### 4. Exit the program
+
+The exit flow gives the user a clear ending point after completing sales and report checking. This keeps the console interaction simple and guided.
+
+<p align="center">
+  <img src="Assets/exit.webp" alt="Exit flow of the POS system" width="420" />
+</p>
+
+---
+
+# Technical Reference
+
+## Course and project details
+
+| Field | Details |
+| --- | --- |
+| Course | AACS1074 Programming Concepts & Design I |
+| Academic year | 2022/2023 |
+| Programme | DFT |
+| Tutorial group | Y1S1 G1 |
+| Student | Low Nam Lee |
+| Submission date | 24 September 2022 |
+| Assignment title | UMT POS System |
+| Program/source name | UMT Programming Bookstore |
+| Language | C |
+| IDE | Microsoft Visual Studio |
+| Application type | Console application |
+
+## System architecture
+
+The diagram below shows the main control flow of the console program. The user interacts with the menu, the program validates input, sales data is processed, and the session data can later be shown in a summary report.
+
+```mermaid
+flowchart TD
+    A[Start program] --> B[Display main menu]
+    B --> C{User menu choice}
+    C -->|Sales order| D[Show book menu]
+    D --> E[Enter book code and quantity]
+    E --> F{Input valid?}
+    F -->|No| E
+    F -->|Yes| G[Calculate item charges]
+    G --> H[Update sales totals]
+    H --> I{Add more items?}
+    I -->|Yes| E
+    I -->|No| J[Print receipt output]
+    C -->|Daily report| K[Read session sales totals]
+    K --> L[Display quantity and gross amount by book]
+    C -->|Exit| M[End program]
+```
+
+The program is structured around a repeated menu loop. Sales-order input updates in-memory totals, and the report option reads those totals to produce the daily summary. Invalid input returns to the same input step until the user provides an acceptable value.
+
+## Bookstore scenario
+
+The bookstore sells programming books across three categories:
+
+- Software programming
+- Web programming
+- Mobile programming
+
+Users choose book codes from the menu, enter quantities, and continue adding items until the order is complete.
+
+## Pricing and discount logic
+
+The original system used fixed book prices and these discount tiers:
+
+- Subtotal above RM200: 5% discount
+- Subtotal above RM300: 10% discount
+- Subtotal above RM500: 15% discount
+
+For each sales order, the program calculates:
+
+1. Item charge
+2. Subtotal
+3. Discount amount
+4. Final total
+
+## Project structure
+
+```text
+.
+|-- Assignment.sln
+|-- Assignment/
+|   |-- Assignment.vcxproj
+|   |-- Assignment.vcxproj.filters
+|   `-- UMT Programming Bookstore.c
+|-- Assets/
+|   |-- How-to-build-project.webp
+|   |-- assignment-exe.png
+|   |-- exit.webp
+|   |-- intro.webp
+|   |-- operation.webp
+|   |-- report.webp
+|   |-- run-cmd.png
+|   `-- validation.webp
+|-- README.md
+`-- run.cmd
+```
+
+## Implementation notes
+
+- Written as a structured C program.
+- Uses arrays to store book quantities, prices, and sales totals.
+- Uses functions for menu display, input handling, calculation, output, reporting, and console UI helpers.
+- Built as a Microsoft Visual Studio console application.
+- Uses standard C headers such as `stdio.h`, `stdlib.h`, `ctype.h`, `time.h`, and `string.h`.
+
+<p align="center">
+  Thanks for checking out this repost of my early C programming coursework.
+</p>
